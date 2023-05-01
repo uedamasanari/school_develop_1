@@ -1,0 +1,9 @@
+.previous_word {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    width:auto;
+    height:50px;
+    border: solid 5px black;
+}
