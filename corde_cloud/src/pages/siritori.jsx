@@ -32,8 +32,13 @@ const siritori =()=> {
         }
     }
 
+    useEffect(() => {
+        console.log("変わったよ")
+    }, [before])
+    
   return (
     <div>
+        {before}
         <PreviewText text="この単語に続いてしりとりをしてください" />
         <BeforeText text={before}/>
         <PreviewText text="しりとりの単語を入力してください" />

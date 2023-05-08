@@ -3,26 +3,26 @@ import { useState } from 'react';
 import styles from '@/styles/Home.module.css';
 
 const Siritori = () => {
-    //初期値「しりとり」、編集名「before」でuseStateを宣言
-    //初期値「''」、編集名「nowText」でuseStateを宣言
-    //初期値「エラー：前回の単語の最後の文字と一致しません。」、編集名「error」でuseStateを宣言
-    //初期値「false」、編集名「flag」でuseStateを宣言
+  const [before, setBefore] = useState('しりとり');
+  const [nowText, setNowText] = useState('');
+  const [error, setError] = useState('エラー：前回の単語の最後の文字と一致しません。');
+  const [flag, setFlag] = useState(false);
 
-    const hantei = () => {
-        if (before[before.length - 1] === nowText[0]) {
-            if (nowText[nowText.length - 1] === 'ん') {
-                alert('入力された単語が「ん」で終わっています。あなたの負けです！');
-                //初期値「しりとり」でbeforeを更新
-
-            } else {
-                //nowTextでbeforeを更新
-
-                //初期値「false」でflagを更新
-            }
-            //初期値「''」でnowTextを更新
-        } else {
-            //初期値「true」でflagを更新
-        }
+  const hantei = () => {
+    if (before[before.length - 1] === nowText[0]) {
+      if (nowText[nowText.length - 1] === 'ん') {
+        alert('入力された単語が「ん」で終わっています。あなたの負けです！');
+        setBefore('しりとり');
+        setNowText('');
+      } else {
+        setBefore(nowText);
+        setFlag(false);
+        setNowText('');
+      }
+      setNowText('');
+    } else {
+      setFlag(true);
+    }
     };
 
   return (
@@ -31,26 +31,23 @@ const Siritori = () => {
         <label>この単語に続いてしりとりをしてください</label>
       </div>
       <div>
-        //classをprevious_wordでbeforeをdivで表示
+        <div className={styles.previous_word}>{before}</div>
       </div>
       <div>
         <label>しりとりの単語を入力してください</label>
       </div>
       <div>
-        //typeをtext、valueをnowTextで表示、onChangeでnowTextをe.target.valueで更新
         <input
           type="text"
-          value=???
-          onChange={(e) => ??? }
+          name="shiritori-input"
+          value={nowText}
+          onChange={(e) => setNowText(e.target.value)}
         />
       </div>
       <div>
-        //押されたらhanteiを動かす
-        <button ???>確定</button>
+        <button onClick={hantei}>確定</button>
       </div>
-      <p>
-        //flagがtrueならerrorを表示
-      </p>
+      <p>{flag === true ? error : ''}</p>
     </div>
   );
 };
