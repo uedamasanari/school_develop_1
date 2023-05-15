@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import styles from '@/styles/Gpt.module.css'
 
 const GptComponent = () => {
   const [message, setMessage] = useState('');
@@ -32,10 +33,11 @@ const GptComponent = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input type="text" value={input} onChange={e => setInput(e.target.value)} />
+        <input type="text" value={input} onChange={e => setInput(e.target.value)} className={styles.hello}/>
         <button type="submit">Send</button>
       </form>
       <p>{message}</p>
+      <img src='gpt/next.svg' />
     </div>
   );
 }
