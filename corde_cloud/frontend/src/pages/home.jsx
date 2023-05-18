@@ -1,9 +1,10 @@
-import styles from '@/styles/Gpt.module.css'
+import React, { useState, useEffect } from 'react'
+import styles from '@/styles/Home.module.css'
 
 export default function Home() {
   return (
-    <div className={styles.hello}>
-      あ
+    <div>
+      <p className={styles.tytle}>あなたへのおすすめ</p>
     </div>
   )
 }
