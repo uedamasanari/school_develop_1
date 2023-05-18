@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
+import MyHeader from "@/components/MyHeader";
+import MyFooter from "@/components/MyFooter";
 import Styles from "@/styles/App.module.css";
 import "@/styles/globals.css"
 
@@ -30,7 +32,9 @@ export default function App({ Component, pageProps }) {
       <GlobalStyle />
       <div className={Styles.body}>
         <div className={Styles.container} style={{ transform: `scale(${scale}) translate(-50%,-50%)` }}>
+          <MyHeader />
           <Component {...pageProps} />
+          <MyFooter />
         </div>
       </div>
     </ThemeProvider>
