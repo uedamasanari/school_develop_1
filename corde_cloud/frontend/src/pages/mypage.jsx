@@ -26,7 +26,7 @@ export default function mypage() {
       {/* …続きを見る */}
 
       {/* プロフィールを編集 */}
-      <button className={styles.profile_setting_button} onClick={atackfunk}>プロフィールを編集</button>
+      <button className={styles.profile_setting_button}>プロフィールを編集</button>
 
       <img src='template/tag.svg' />
       <img src='template/add.svg' />
