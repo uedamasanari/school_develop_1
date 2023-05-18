@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styles from '@/styles/template.module.css'
 
-const GptComponent = () => {
+const template = () => {
     const [message, setMessage] = useState('');
     const [hp,setHp] = useState(100);
 
@@ -31,4 +31,4 @@ const GptComponent = () => {
   );
 }
 
-export default GptComponent;
+export default template;
