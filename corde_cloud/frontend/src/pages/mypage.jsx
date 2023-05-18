@@ -1,11 +1,14 @@
+import React, { useState } from 'react';
 import styles from '@/styles/Mypage.module.css'
 
-export default function Mypage() {
 
-  const MypageComponent = () =>{
-    const [user_picture,setUser_picture] =usestate("");
-    const [user_name,setUser_name] =usestate("");
-    const [mail_address,setMail_address] =usestate("");
+
+export default function mypage() {
+
+
+    const [user_picture,setUser_picture] =useState("");
+    const [user_name,setUser_name] =useState("");
+    const [mail_address,setMail_address] =useState("");
 
   
   return (
@@ -30,5 +33,4 @@ export default function Mypage() {
     </div>
   )
 
-  }
 }
