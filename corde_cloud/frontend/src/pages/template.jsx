@@ -24,8 +24,10 @@ const template = () => {
         <p className={styles.text}>{message}</p>
         <input type='text' className={styles.message} value={message} onChange={e => setMessage(e.target.value)} />
         <button className={styles.button} onClick={alertfunk}>アラートを表示</button>
+
         <p className={styles.hp}>HP:{hp}</p>
         <button className={styles.button} onClick={atackfunk}>攻撃</button>
+
         <img src='gpt/next.svg' />
     </div>
   );
