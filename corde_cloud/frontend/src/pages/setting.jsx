@@ -1,9 +1,19 @@
 import styles from '@/styles/Setting.module.css'
 
 export default function Setting() {
+
   return (
-    <div className={styles.hello}>
-      hello!
+
+
+    <div>
+
+          {/*タグイメージsvc*/}
+
+          <img classNames={styles.add_svc} src='profile/add.svg' />
+
     </div>
+
+
+          
   )
 }
