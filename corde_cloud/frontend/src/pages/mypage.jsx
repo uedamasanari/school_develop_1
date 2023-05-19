@@ -28,8 +28,15 @@ export default function mypage() {
       {/* プロフィールを編集 */}
       <button className={styles.profile_setting_button}>プロフィールを編集</button>
 
-      <img src='template/tag.svg' />
-      <img src='template/add.svg' />
+
+      {/*タグイメージsvc*/}
+      <img classNames={styles.tag_svc} src='profile/tag.svg' />
+
+
+      {/*タグイメージsvc*/}
+
+      <img classNames={styles.add_svc} src='profile/add.svg' />
+
     </div>
   )
 
