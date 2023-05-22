@@ -1,5 +1,97 @@
+.main{
+    width: 80%;
+}
+
+.image-container {
+    position: relative;
+    top: 1000px;
+    margin-top: 1000px;
+    width: 500px;
+    
+  }
+
 .picture_human_svc{
-    width: 50px;
-    height: 50px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+
+    opacity: 0.5;
+}
+
+.picture_camera_svc{
+    position: absolute;
+    top: 100px;
+    left: 30px;
+
+    width: 80px;
+    height: 80px;
+    fill: #FFFFFF;
+
+    opacity: 0.5;
+}
+
+.add_svc{
+    width: 28px;
+    height: 28px;
+}
+
+
+.text_user{
+    position: absolute;
+    top: 300px;
+    left: 25px;
+
+    font-size: 20px;
+}
+.add_user_name{
+    position: absolute;
+    top: 350px;
+    left: 25px;
+
+    font-size: 20px;
+}
+
+
+.text_mail{
+    position: absolute;
+    top: 425px;
+    left: 25px;
+
+    font-size: 20px;
+}
+.add_mail{
+    position: absolute;
+    top: 475px;
+    left: 25px;
+
+    font-size: 20px;
+}
+
+
+.add_svc{
+    position: absolute;
+    top: 441px;
+    left: 170px;
+
+
+}
+
+
+
+.text_comment{
+    position: absolute;
+    top: 550px;
+    left: 25px;
+
+    font-size: 20px;
+}
+.add_comment{
+    position: absolute;
+    top: 600px;
+    left: 25px;
+
+    font-size: 20px;
+    font-family: "Comic Sans MS" ;
 }
 

@@ -6,26 +6,41 @@ export default function Setting() {
 
 
     <div className="main">
+      <div className="image-container">
 
           {/*画像人間イメージsvc*/}
-          <img classNames={styles.picture_human_svc} src='setting/picture_human.svg'  width="50" height="50"/>
+          <img className={styles.picture_human_svc} src='setting/picture_human.svg'/>
 
           {/*画像人間に被せるカメライメージsvc*/}
-          <img classNames={styles.picture_camera_svc} src='setting/picture_camera.svg' />
+          <img className={styles.picture_camera_svc} src='setting/picture_camera.svg' />
+      </div>
 
 
       {/* ユーザー名 */}
-      <p>ユーザー名</p>
+      <p className={styles.text_user}>ユーザー名</p>
+      <input type="text" className={styles.add_user_name} half placeholder="user_name" autocomplete="no"></input>
+
 
 
       {/* ユーザー名 */}
-      <p>メールアドレス</p>
+      <p className={styles.text_mail}>メールアドレス</p>
+      <input type="text" className={styles.add_mail} half placeholder="mail" autocomplete="no"></input>
+
 
       {/*メールアドレスの横の鍵マークイメージsvc*/}
-      <img classNames={styles.add_svc} src='setting/Locked.svg' />
+      <img className={styles.add_svc} src='setting/Locked.svg' />
+
+
+
+      {/* 自己紹介欄 */}
+      <p className={styles.text_comment}>自己紹介</p>
+      <input type="text" className={styles.add_comment} half placeholder="comment" autocomplete="no"></input>
+
+
     </div>
 
 
-          
+
+
   )
 }
