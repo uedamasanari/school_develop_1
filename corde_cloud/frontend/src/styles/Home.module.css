@@ -19,11 +19,12 @@
 }
 
 .container{
-    color: white;
+    display: flex;
 }
 
-.container.pic{
-    color: white;
+.square{
     width: 114px;
     height: 131px;
+    background-color: white;
+    margin-right: 10px;
 }
