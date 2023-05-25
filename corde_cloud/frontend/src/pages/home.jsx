@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import styles from '@/styles/Home.module.css'
+import React, { useState, useEffect } from 'react';
+import styles from '@/styles/Home.module.css';
 
-const home = () =>{
-
-  const squares = Array.from({length:3},(_,index) => index);
+const home = () => {
   
   return (
     <div>
@@ -11,18 +9,31 @@ const home = () =>{
 
       <p className={styles.closet}>クローゼットのおすすめ</p>
       <div className="container">
-        {squares.map((index) => (
-          <div key={index} className="square"></div>
-        ))}
+        <img src="home/home.jpeg" width="114" height="131"/>
+        <img src="home/home.jpeg" width="114" height="131"/>
+        <img src="home/home.jpeg" width="114" height="131"/>
       </div>
+      <div className="container">
+        <img src="home/home.jpeg" width="114" height="131"/>
+        <img src="home/home.jpeg" width="114" height="131"/>
+        <img src="home/home.jpeg" width="114" height="131"/>
+      </div>
+      
 
       <p className={styles.sns}>SNSのおすすめ</p>
-      <div className={styles.container}>
-        <div className={styles.pic}></div>
-        <div className={styles.pic}></div>
-        <div className={styles.pic}></div>
+      <div className="container">
+        <img src="home/home.jpeg" width="114" height="131"/>
+        <img src="home/home.jpeg" width="114" height="131"/>
+        <img src="home/home.jpeg" width="114" height="131"/>
       </div>
+      <div className="container">
+        <img src="home/home.jpeg" width="114" height="131"/>
+        <img src="home/home.jpeg" width="114" height="131"/>
+        <img src="home/home.jpeg" width="114" height="131"/>
+      </div>
+
     </div>
+      
   );
 }
 
