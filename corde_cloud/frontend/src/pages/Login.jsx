@@ -2,36 +2,43 @@ import React, { useState, useEffect } from 'react'
 import styles from '@/styles/template.module.css'
 
 
-const template = () => {
-    const [message, setMessage] = useState('');
-    const [hp,setHp] = useState(100);
+import React, { useState } from 'react';
 
-    const alertfunk = () => {
-        alert("あなたが入力しているメッセージは"+message+"です。")
-    }
+function App() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-    const atackfunk = () => {
-        setHp(hp-5)
-    }
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
 
-    useEffect(() => {
-        if(hp % 10 == 0 && hp != 100){
-            alert("敵のHPは10で割り切れます。")
-        }
-    },[hp])
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleLogin = () => {
+    // ログイン処理をここに実装する
+    console.log('ログインがクリックされました');
+    console.log('Email:', email);
+    console.log('Password:', password);
+  };
+
+  const handleSignUp = () => {
+    // 新規登録処理をここに実装する
+    console.log('新規登録がクリックされました');
+  };
 
   return (
-    <div>
-        <p className={styles.text}>{message}</p>
-        <input type='text' className={styles.message} value={message} onChange={e => setMessage(e.target.value)} />
-        <button className={styles.button} onClick={alertfunk}>アラートを表示</button>
-
-        <p className={styles.hp}>HP:{hp}</p>
-        <button className={styles.button} onClick={atackfunk}>攻撃</button>
-
-        <img src='gpt/next.svg' />
+    <div className="container">
+      <h1 className="icon">アイコン</h1>
+      <input className="input" type="text" value={email} onChange={handleEmailChange} placeholder="メールアドレス" />
+      <br />
+      <input className="input" type="password" value={password} onChange={handlePasswordChange} placeholder="パスワード" />
+      <br />
+      <button className="button" onClick={handleLogin}>ログイン</button>
+      <button className="button" onClick={handleSignUp}>新規登録</button>
     </div>
   );
 }
 
-export default template;
+export default App;
