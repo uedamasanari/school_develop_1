@@ -1,3 +1,27 @@
-.yes{
-    color:red;
+.container {
+    display: flex;
+    align-items: center;
+}
+  
+.icon {
+    width: 32px;
+    height: 32px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+  
+.leftIcon {
+    margin-right: 0;
+    margin-left: 0;
+}
+  
+.rightIcon {
+    margin-left: auto;
+}
+
+.horizontalLine {
+    border-top: 1px solid black; /* 横線のスタイル */
+    flex-grow: 1; /* 横線が残りのスペースを占めるようにする */
 }
