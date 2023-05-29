@@ -1,9 +1,29 @@
 .container {
+    margin-top: 8px;
+}
+
+.profile {
     display: flex;
     align-items: center;
-    flex-direction: column; /* コンテンツを縦方向に配置するために追加 */
+    margin-right: 8px;
+    margin-left: 8px;
 }
-  
+
+.p {
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.img {
+    width: 100%; /* 画像の幅を親要素に合わせる */
+    height: auto; /* アスペクト比を維持したまま、高さを自動調整する */
+}
+
+.icons {
+    display: flex; /* アイコンを同じ行に配置するために追加 */
+    justify-content: space-between; /* アイコンを行の両端に配置するように修正 */
+}
+
 .icon {
     width: 32px;
     height: 32px;
@@ -14,8 +34,8 @@
 }
   
 .leftIcon {
-    margin-right: 0;
-    margin-left: 0;
+    margin-right: 8px;
+    margin-left: 8px;
 }
   
 .rightIcon {
