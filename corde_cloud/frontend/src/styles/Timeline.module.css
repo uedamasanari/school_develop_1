@@ -1,6 +1,7 @@
 .container {
     display: flex;
     align-items: center;
+    flex-direction: column; /* コンテンツを縦方向に配置するために追加 */
 }
   
 .icon {
@@ -23,5 +24,5 @@
 
 .horizontalLine {
     border-top: 1px solid black; /* 横線のスタイル */
-    flex-grow: 1; /* 横線が残りのスペースを占めるようにする */
+    width: 100%; /* 横線がコンテナの幅いっぱいに広がるように追加 */
 }
