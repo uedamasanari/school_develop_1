@@ -55,15 +55,23 @@
     margin-bottom:10px;
 
     font-size:15px;
+
+    max-width: 200px;
+    margin-top: -30px;
+
 }
 
 .comment.expanded {
     max-height: none; /* 全文表示する場合の高さ */
+
+    max-width: 400px;
   }
 
-  .read-more {
+  .read_more {
     cursor: pointer;
     color: blue;
+    cursor: pointer;
+    margin-left: 250px;
   }
 
 
