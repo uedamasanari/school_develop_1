@@ -3,7 +3,7 @@ import styles from '@/styles/Mypage.module.css'
 
 
 
-
+<img className={styles.setting_svc} src='profile/Setting.svg' />
 
 
   {/*ユーザー写真*/}
@@ -45,10 +45,11 @@ import styles from '@/styles/Mypage.module.css'
 
 
       {/* プロフィールコメント欄 */}
-      <p className={styles.user_comment}>プロフィールコメント欄</p>
+      {/*<p className={styles.user_comment}>プロフィールコメント欄</p>*/}
 
 
-      <div className={`${styles.comment} ${expanded ? styles.expanded : ''}`}>
+      <div className={`${styles.comment} ${expanded ? styles.expanded : ''}`}
+      style={{ maxWidth: '300px' }}>
         <div
           className={styles.commentContent}
           style={{
@@ -71,7 +72,7 @@ import styles from '@/styles/Mypage.module.css'
         </div>
               ) : (
         <div className={styles.read_more} onClick={handleToggleExpand}>
-        ...続きを見る
+        続きを読む
         </div>
         )}
 
