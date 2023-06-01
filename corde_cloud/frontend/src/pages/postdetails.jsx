@@ -27,8 +27,13 @@ export default function Postdetails() {
       <div>
         <hr className={styles.horizontalLine} />
       </div>
-      <div>
+      <div className={styles.good}>
         <p>xxxxxいいね</p>
+      </div>
+      <div className={styles.detail}>
+        <div className={styles.tag}>
+          ＃赤 ＃青 ＃お出かけ
+        </div>
       </div>
       </div>
   );

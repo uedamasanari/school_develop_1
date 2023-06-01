@@ -46,3 +46,15 @@
     border-top: 1px solid black; /* 横線のスタイル */
     width: 100%; /* 横線がコンテナの幅いっぱいに広がるように追加 */
 }
+
+.good {
+    margin: 4px;
+}
+
+.detail {
+    margin: 8px;
+}
+
+.tag {
+    color: red;
+}
