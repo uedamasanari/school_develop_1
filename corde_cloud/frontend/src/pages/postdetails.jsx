@@ -1,6 +1,6 @@
-import styles from '@/styles/Timeline.module.css';
+import styles from '@/styles/Postdetails.module.css';
 
-export default function Timeline() {
+export default function Postdetails() {
   return (
     
     <div className={styles.container}>
@@ -26,6 +26,9 @@ export default function Timeline() {
       </div>
       <div>
         <hr className={styles.horizontalLine} />
+      </div>
+      <div>
+        <p>xxxxxいいね</p>
       </div>
       </div>
   );

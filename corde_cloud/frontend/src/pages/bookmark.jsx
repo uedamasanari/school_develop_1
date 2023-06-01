@@ -1,6 +1,6 @@
-import styles from '@/styles/Timeline.module.css';
+import styles from '@/styles/Bookmark.module.css';
 
-export default function Timeline() {
+export default function Bookmark() {
   return (
     
     <div className={styles.container}>
