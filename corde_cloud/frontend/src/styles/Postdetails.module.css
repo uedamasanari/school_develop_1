@@ -59,3 +59,12 @@
 .tag {
     color: red;
 }
+
+.heart {
+    color: gray;
+    cursor: pointer;
+}
+
+.red-heart {
+    color: red;
+}
