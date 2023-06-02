@@ -5,8 +5,13 @@ import styles from '@/styles/template.module.css'
 import React, { useState } from 'react';
 
 function App() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const [email, setEmail] = useState('');
+const [password, setPassword] = useState('');
+
+useEffect(() => {
+  console.log('Email:', email);
+  console.log('Password:', password);
+}, [email, password]);
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
