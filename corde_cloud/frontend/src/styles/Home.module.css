@@ -22,7 +22,6 @@
     display: flex;
 }
 
-/* img.closetimg{
-    width: 114px;
-    height: 131px;
-} */
+.codeimg{
+    text-align: center;
+}

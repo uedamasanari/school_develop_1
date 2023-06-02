@@ -3,22 +3,20 @@ import styles from '@/styles/Search.module.css'
 
 export default function Home() {
   return (
-    <div>
-        <div className={styles.container}>
+    <div style={{backgroungimage:'url("search/closet.svg")'}}>
+        {/* <div className="container"> */}
             <p className={styles.tagSearch}>タグ検索</p>
-            <pre>
-                #季節
-                #柄
-                #色
-                #ブランド名  など
-            </pre>
-            <button className={styles.button}>検索</button>
-        </div>
+                <p className={styles.tag}>#季節</p>
+                <p className={styles.tag}>#柄</p>
+                <p className={styles.tag}>#色</p>
+                <p className={styles.tag}>#ブランド名  など</p>
+                <div className="button-container"><button className={styles.button}>表示</button></div>
+        {/* </div> */}
 
-        <div className={styles.container}>
+        {/* <div className="container"> */}
             <p className={styles.displayAll}>アイテムをすべて表示する</p>
-            <button className={styles.button}>表示</button>
-        </div>
+            <div className="button-container"><button className={styles.button}>表示</button></div>
+        {/* </div> */}
 
     </div>
     

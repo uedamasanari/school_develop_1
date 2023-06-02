@@ -1,12 +1,35 @@
 import React, { useState, useEffect } from 'react'
-import styles from '@/styles/SearchResults.module.css'
+import styles from '@/styles/Searchresults.module.css'
 
 export default function Home() {
   return (
     <div>
-        <div className={styles.container}>
-            <img src=""/>
-            <p>アイテム名</p>
+        <div className="container">
+            <p className={styles.itemimg}>
+              <img src="searchResults/sample.jpeg" width="147" height="155"/>
+              <img src="searchResults/sample.jpeg" width="147" height="155"/>
+            </p>
+        </div>
+
+        <div className="container">
+            <p className={styles.itemimg}>
+              <img src="searchResults/sample.jpeg" width="147" height="155"/>
+              <img src="searchResults/sample.jpeg" width="147" height="155"/>
+            </p>
+        </div>
+
+        <div className="container">
+            <p className={styles.itemimg}>
+              <img src="searchResults/sample.jpeg" width="147" height="155"/>
+              <img src="searchResults/sample.jpeg" width="147" height="155"/>
+            </p>
+        </div>
+
+        <div className="container">
+            <p className={styles.itemimg}>
+              <img src="searchResults/sample.jpeg" width="147" height="155"/>
+              <img src="searchResults/sample.jpeg" width="147" height="155"/>
+            </p>
         </div>
         
 

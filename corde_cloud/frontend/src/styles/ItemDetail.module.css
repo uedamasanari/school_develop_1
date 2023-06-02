@@ -1,0 +1,10 @@
+.itemimg{
+    display: flex;
+    justify-content: center;
+}
+
+.itemname{
+    text-align: center;
+    font-size: 24px;
+    font-family: "Hiragino Sans";
+}

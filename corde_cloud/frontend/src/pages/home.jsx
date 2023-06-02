@@ -9,27 +9,37 @@ const home = () => {
 
       <p className={styles.closet}>クローゼットのおすすめ</p>
       <div className="container">
-        <img src="home/home.jpeg" width="114" height="131"/>
-        <img src="home/home.jpeg" width="114" height="131"/>
-        <img src="home/home.jpeg" width="114" height="131"/>
+        <p className={styles.codeimg}>
+          <img src="home/sample.jpeg" width="114" height="131"/>
+          <img src="home/sample.jpeg" width="114" height="131"/>
+          <img src="home/sample.jpeg" width="114" height="131"/>
+        </p>
       </div>
+
       <div className="container">
-        <img src="home/home.jpeg" width="114" height="131"/>
-        <img src="home/home.jpeg" width="114" height="131"/>
-        <img src="home/home.jpeg" width="114" height="131"/>
+        <p className={styles.codeimg}>
+          <img src="home/sample.jpeg" width="114" height="131"/>
+          <img src="home/sample.jpeg" width="114" height="131"/>
+          <img src="home/sample.jpeg" width="114" height="131"/>
+        </p>
       </div>
       
 
       <p className={styles.sns}>SNSのおすすめ</p>
       <div className="container">
-        <img src="home/home.jpeg" width="114" height="131"/>
-        <img src="home/home.jpeg" width="114" height="131"/>
-        <img src="home/home.jpeg" width="114" height="131"/>
+        <p className={styles.codeimg}>
+          <img src="home/sample.jpeg" width="114" height="131"/>
+          <img src="home/sample.jpeg" width="114" height="131"/>
+          <img src="home/sample.jpeg" width="114" height="131"/>
+        </p>
       </div>
+
       <div className="container">
-        <img src="home/home.jpeg" width="114" height="131"/>
-        <img src="home/home.jpeg" width="114" height="131"/>
-        <img src="home/home.jpeg" width="114" height="131"/>
+        <p className={styles.codeimg}>
+          <img src="home/sample.jpeg" width="114" height="131"/>
+          <img src="home/sample.jpeg" width="114" height="131"/>
+          <img src="home/sample.jpeg" width="114" height="131"/>
+        </p>
       </div>
 
     </div>

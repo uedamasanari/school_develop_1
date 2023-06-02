@@ -1,19 +1,17 @@
 .container{
-    width: 114px;
-    height: 131px;
     position: relative;
 }
-
-.container.img{
-    width: auto;
+p.itemname{
+    position: absolute;
+    font-family: "Hiragino Sans";
+    font-size: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* padding: 0%;
+    margin: 0; */
 }
 
-.p{
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 20px;
-    color: black;
-    padding: 0%;
-    margin: 0%;
+.itemimg{
+    text-align: center;
 }
