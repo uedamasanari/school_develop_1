@@ -1,3 +1,4 @@
+import MyHeader from "@/components/MyHeader";
 import React, { useState } from 'react';
 import styles from '@/styles/Postdetails.module.css';
 
@@ -13,7 +14,7 @@ const Postdetails = () => {
       setLikes(likes ? likes - 1 : likes + 1);
     };
   return (
-    
+    <><MyHeader title={"詳細"} />
     <div className={styles.container}>
       <div>
         <div className={styles.profile}>
@@ -28,19 +29,19 @@ const Postdetails = () => {
         <hr className={styles.horizontalLine} />
       </div>
       <div className={styles.icons}>
-	      <span className={`heart ${likes ? 'red-heart' : ''} ${styles.icon} ${styles.leftIcon}`} onClick={handleLikeClick}>
-		      {likes ? (
+        <span className={`heart ${likes ? 'red-heart' : ''} ${styles.icon} ${styles.leftIcon}`} onClick={handleLikeClick}>
+          {likes ? (
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className={`${styles.likedIcon} ${styles.red_heart}`} viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
             </svg>
           ) : (
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className={`${styles.likeIcon} ${styles.heart}`} viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
             </svg>
           )}
         </span>
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className={`${styles.icon} ${styles.rightIcon}`} viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+          <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/>
         </svg>
       </div>
       <div>
@@ -52,7 +53,7 @@ const Postdetails = () => {
       <div className={styles.detail}>
         <div className={styles.tag}>＃赤 ＃青 ＃お出かけ</div>
       </div>
-    </div>
+    </div></>
   );
 };
 
