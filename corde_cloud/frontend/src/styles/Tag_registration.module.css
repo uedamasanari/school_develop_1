@@ -1,0 +1,172 @@
+
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modalContent {
+  background-color: #fff;
+  border-radius: 17px;
+  padding: 20px;
+  width: 250px; /* 幅を変更する値に調整 */
+  max-width: 90%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 3px solid #8C6A63; /* 縁の色を変更する値に調整 */
+  
+}
+.heading {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #8C6A63;
+}
+
+
+
+.previewBox {
+  width: 200px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #fff;
+  height: 25px;
+  margin-left: 25px;
+  
+  margin-top: 30px;
+
+  border: 3px solid #D9D9D9;
+
+  white-space: nowrap; /* テキストを折り返さずに一行で表示 */
+  overflow: hidden; /* テキストが要素からはみ出した場合に非表示にする */
+  text-overflow: ellipsis; /* テキストが要素からはみ出した場合に省略記号で表示 */
+}
+
+.previewWrapper {
+  position: relative;
+  top: 0px;
+
+  border: 1px solid #8C6A63;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  height: 100px;
+  width: 250px;
+
+}
+
+.explanation{
+  font-size: 13px;
+  color: #8C6A63;
+  margin-left: 48px;
+}
+
+
+
+
+.cFFA3FB{
+  background-color:#FFA3FB;
+}
+
+.cFFF493{
+  background-color:#FFF493;
+}
+
+.cFFB763{
+  background-color:#FFB763;
+}
+
+.cFF7676{
+  background-color:#FF7676;
+}
+
+.c9397FF{
+  background-color:#9397FF;
+}
+
+.cBA63FF{
+  background-color:#FFA3FB;
+}
+
+.c93FFFF{
+  background-color:#BA63FF;
+}
+
+.cB3FF66{
+  background-color:#B3FF66;
+}
+
+.c616161{
+  background-color:#616161;
+}
+
+
+
+.inputField {
+  width: 100%;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #8C6A63;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 230px;
+}
+
+.selectField {
+  width: 100%;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #8C6A63;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #8C6A63;
+}
+
+.button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/*登録*/
+.registerButton {
+  background-color: #8C6A63;
+  margin-top: 20px;
+  padding: 5px 20px; /* 上下のパディングを小さくする */
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 90px;
+}
+
+/*閉じる*/
+.closeButton {
+  background-color: transparent;
+  color: #888;
+  font-size: 16px;
+  margin-left: -30px;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.closeButton:hover {
+  color: #333;
+}
+
+
+
+.overlay.show {
+  display: block;
+}

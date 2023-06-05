@@ -1,4 +1,21 @@
 
+.header{
+
+}
+
+.header_name{
+
+    font-size: 25px;
+    margin-left: 110px;
+}
+.setting_svc{
+
+    height: 50px;
+    bottom: 60px;
+    cursor: pointer;
+    margin-left: 100px;
+
+}
 
 
 .user_Profile{

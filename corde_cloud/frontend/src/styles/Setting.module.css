@@ -47,6 +47,12 @@
     left: 25px;
 
     font-size: 20px;
+
+    color: red;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
+    width: 350px;
+    height: 40px;
 }
 
 
@@ -63,6 +69,12 @@
     left: 25px;
 
     font-size: 20px;
+
+    color: red;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
+    width: 350px;
+    height: 40px;
 }
 
 
@@ -91,5 +103,11 @@
 
     font-size: 20px;
     font-family: "Comic Sans MS" ;
+
+    color: red;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
+    width: 350px;
+    height: 150px;
 }
 

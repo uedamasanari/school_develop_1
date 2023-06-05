@@ -3,8 +3,6 @@ import styles from '@/styles/Mypage.module.css'
 
 
 
-<img className={styles.setting_svc} src='profile/Setting.svg' />
-
 
   {/*ユーザー写真*/}
   const mypage = () => {
@@ -23,6 +21,19 @@ import styles from '@/styles/Mypage.module.css'
 
   return (
     <div>
+
+
+      <div className={styles.header}>
+
+      <p className={styles.header_name}>プロフィール</p>
+      {/*設定マーク*/}
+      <img className={styles.setting_svc} src='profile/Setting.svg' />
+
+      </div>
+
+
+
+
       <div className={styles.user_Profile}>
 
         {/*ユーザー写真*/}
