@@ -1,8 +1,10 @@
 import styles from '@/styles/Timeline.module.css';
 
 export default function Timeline() {
+  const items = [1, 2, 3];
   return (
-    
+    <div>
+    {items.map((item, index) => (
     <div className={styles.container}>
       <div>
         <div className={styles.profile}>
@@ -27,6 +29,8 @@ export default function Timeline() {
       <div>
         <hr className={styles.horizontalLine} />
       </div>
+      </div>
+      ))}
       </div>
   );
 }
