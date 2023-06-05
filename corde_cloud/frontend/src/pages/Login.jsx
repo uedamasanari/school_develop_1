@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import styles from '@/styles/template.module.css'
+import styles from '@/styles/Login.module.css'
 
-
-import React, { useState } from 'react';
-
-function App() {
+function Login() {
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
 
@@ -46,4 +43,4 @@ useEffect(() => {
   );
 }
 
-export default App;
+export default Login;
