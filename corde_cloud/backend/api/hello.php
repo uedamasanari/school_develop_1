@@ -1,4 +1,5 @@
 <?php
 require_once 'DBManager.php';
-__construct();
+$dbManager = new DBManager();
+$dbManager->GetDB();
 ?>
