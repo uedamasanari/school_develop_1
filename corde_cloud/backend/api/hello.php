@@ -1,3 +1,4 @@
 <?php
-    echo "Hello World!";
+require_once 'DBManager.php';
+__construct();
 ?>
