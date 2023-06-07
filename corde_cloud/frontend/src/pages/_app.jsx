@@ -32,7 +32,6 @@ export default function App({ Component, pageProps }) {
       <GlobalStyle />
       <div className={Styles.body}>
         <div className={Styles.container} style={{ transform: `scale(${scale}) translate(-50%,-50%)` }}>
-          <MyHeader />
           <Component {...pageProps} />
           <MyFooter />
         </div>
