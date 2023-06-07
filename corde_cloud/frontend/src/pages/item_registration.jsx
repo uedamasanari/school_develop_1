@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styles from '@/styles/Item_registration.module.css'
+import MyHeader from "@/components/MyHeader";
+
 
 const Item_registration = () => {
   const [itemName, setItemName] = useState('');
@@ -36,38 +38,54 @@ const Item_registration = () => {
   };
 
   return (
+
     <div className={styles.container}>
-      <h1>アイテム送信フォーム</h1>
+            <MyHeader title={"プロフィール"} />
       <form onSubmit={handleSubmit}>
-        <div className={styles['form-group']}>
-          <label>アイテム名:</label>
-          <input type="text" value={itemName} onChange={handleItemNameChange} />
+
+        
+        <div className={styles.form_group_name}>
+          {/* アイテム名 */}
+          <input type="text" value={itemName} onChange={handleItemNameChange} className={styles.form_name} half placeholder="アイテム名"/>
         </div>
-        <div className={styles['form-group']}>
-          <label>アイテム画像:</label>
-          <input type="file" accept="image/*" onChange={handleItemImageChange} />
-          {itemImage && <img src={itemImage} alt="アイテム画像" className={styles['image-preview']} />}
+
+
+        <div className={styles.form_group_image}>
+          {/* アイテム画 */}
+
+
+            <input type="file" accept="image/*" onChange={handleItemImageChange} className={styles.image_tab} />
+
+          {itemImage && <img src={itemImage} alt="アイテム画像" className={styles.image_preview} />}
         </div>
-        <div className={styles['form-group']}>
-          <label>タグ:</label>
-          <select value={selectedTag} onChange={handleTagChange}>
+
+
+        <div className={styles.form_group_tag}>
+          <label>タグ</label>
+          <select  multiple={true} value={selectedTag} onChange={handleTagChange}>
             <option value="">タグを選択してください</option>
             <option value="tag1">タグ1</option>
             <option value="tag2">タグ2</option>
             <option value="tag3">タグ3</option>
           </select>
         </div>
-        <div className={styles['form-group']}>
-          <label>詳細:</label>
-          <textarea value={itemDescription} onChange={handleDescriptionChange} />
+
+
+        <button className={styles.add_button}>#追加</button>
+
+
+        <div className={styles.form_group}>
+          {/* 詳細 */}
+          <input textarea value={itemDescription} onChange={handleDescriptionChange} className={styles.item_info} half placeholder="アイテム詳細"/>
         </div>
-        <div className={styles['button-group']}>
-          <button type="submit">#追加</button>
+
+
+        <div className={styles.button_group}>
+          <button type="submit" className={`${styles.button} ${styles.center_button}`}>登録</button>
         </div>
+
+
       </form>
-      <div className={styles['button-group']}>
-        <button onClick={handleSubmit} className={styles.button}>登録</button>
-      </div>
     </div>
   );
 };

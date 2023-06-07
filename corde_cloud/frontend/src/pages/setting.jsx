@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import styles from '@/styles/Setting.module.css'
-
+import MyHeader from "@/components/MyHeader";
 
 const Setting = () => {
   return (
 
 
     <div className={styles.main}>
+
+      <MyHeader title={"プロフィール画面"} />
+
       <div className={styles.image_container}>
 
           {/*画像人間イメージsvc*/}

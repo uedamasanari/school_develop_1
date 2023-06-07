@@ -1,5 +1,8 @@
 
 .header{
+position: absolute;
+top: 10px;
+left: 250px;
 
 }
 
@@ -140,3 +143,46 @@
     top: 700px;
     left: 300px;
 }
+
+
+
+
+.App {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    border: 3px solid gray;
+    border-radius: 30px 30px 0 0; /* 上部のみにborder-radiusを設定 */
+
+    width: 90%; /* 幅を狭くする */
+    margin: 0 auto; /* 横に中央寄せする */
+    height: 480px;
+  }
+  
+  .tabs {
+    display: flex;
+    justify-content: center;
+    border-radius: 3px;
+  }
+  
+  .tab {
+    padding: 20px 40px;
+    margin: 0 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    background-color: transparent;
+    border: none;
+    
+
+  }
+  
+  .tab.active {
+    border-bottom: 2px solid lightblue;
+  }
+  
+  .content {
+    padding: 20px;
+    flex-wrap: wrap; /* 写真が横に並ぶように改良 */
+    justify-content: space-between; /* 写真の間隔を均等に配置 */
+  }

@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import styles from '@/styles/Tag_registration.module.css';
+import MyHeader from "@/components/MyHeader";
+
+
+
 
 const Tag_registration = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -29,6 +33,9 @@ const Tag_registration = () => {
 
   return (
     <div>
+
+<MyHeader title={"タグ登録"} />
+
       <button className={styles.button} onClick={openModal}>ボタン</button>
 
       {isModalOpen && (
