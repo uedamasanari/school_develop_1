@@ -6,7 +6,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 require_once 'DBManager.php';
 
 class Search_info {
-    public function SearchUser() {
+    public function SearchUser() { // ユーザーの情報を表示する
         $dbManager = new DBManager();
         $pdo = $dbManager->GetDB(); // データベース接続を取得
 
@@ -33,7 +33,7 @@ class Search_info {
         }
         return $data;
     }
-    public function getTweetLikesCount($tweet_id) {
+    public function getTweetLikesCount($tweet_id) { // 指定したツイートのいいね数を返す
         $dbManager = new DBManager();
         $pdo = $dbManager->GetDB(); // データベース接続を取得
         $sql = "
@@ -47,7 +47,12 @@ class Search_info {
 
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         $likeCount = $result['like_count'] ?? 0;
-        return $likeCount;
+        return $likeCount;//いいね数を返す
+        //フロント側の呼び方
+        //$dbManager = new Search_info();
+        //$tweetId = 1; // ツイートIDを指定
+        //$likeCount = $dbManager->getTweetLikesCount($tweetId);
+        //echo "Tweet ID: " . $tweetId . ", Like Count: " . $likeCount;
     }
 }
 ?>
