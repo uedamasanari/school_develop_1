@@ -41,6 +41,7 @@
   
 .rightIcon {
     margin-left: auto;
+    margin-right: 8px;
 }
 
 .horizontalLine {
@@ -67,4 +68,13 @@
 
 .red_heart {
     color: red;
+}
+
+.book {
+    color: gray;
+    cursor: pointer;
+}
+
+.black_book {
+    color: black;
 }
