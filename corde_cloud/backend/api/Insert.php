@@ -3,7 +3,7 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 require_once 'DBManager.php';
-class searcheruser {
+class Insert {
     public function Insertuser_info($user_name,$icon_path,$user_coment, $mail_address,$password) {
         $dbManager = new DBManager();
         $pdo = $dbManager->GetDB(); // データベース接続を取得
@@ -17,5 +17,8 @@ class searcheruser {
         $stmt->execute(); //$searcher = new searcheruser();
                           //$searcher->Insertuser_info("aaaaa", "aaaaa@","vvvvvv","vvvvvv","bbbbb");
     }
+
+
+    
 }
 ?>

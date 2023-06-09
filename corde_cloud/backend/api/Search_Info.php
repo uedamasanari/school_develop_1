@@ -5,8 +5,8 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 require_once 'DBManager.php';
 
-class searcheruser {
-    public function searchuser_info() {
+class Search_info {
+    public function SearchUser() {
         $dbManager = new DBManager();
         $pdo = $dbManager->GetDB(); // データベース接続を取得
 
@@ -32,8 +32,22 @@ class searcheruser {
             echo 'メアド: ' . $row['mail_address'] . '<br>';
         }
         return $data;
-        //$searcher = new searcheruser();
-        //$userData = $searcher->searchuser_info();
+    }
+    public function getTweetLikesCount($tweet_id) {
+        $dbManager = new DBManager();
+        $pdo = $dbManager->GetDB(); // データベース接続を取得
+        $sql = "
+            SELECT COUNT(good_id) AS like_count
+            FROM good
+            WHERE tweet_id = :tweet_id
+        ";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':tweet_id', $tweet_id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $likeCount = $result['like_count'] ?? 0;
+        return $likeCount;
     }
 }
 ?>
