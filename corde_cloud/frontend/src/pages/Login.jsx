@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styles from '@/styles/Login.module.css'
+import MyHeader from "@/components/MyHeader";
 
 function Login() {
 const [email, setEmail] = useState('');
@@ -31,7 +32,9 @@ useEffect(() => {
   };
 
   return (
+    
     <div className="container">
+      <MyHeader title={"ログイン"} />
       <h1 className="icon">アイコン</h1>
       <input className="input" type="text" value={email} onChange={handleEmailChange} placeholder="メールアドレス" />
       <br />
