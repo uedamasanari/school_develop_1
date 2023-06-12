@@ -61,6 +61,9 @@ const Timeline = () =>  {
             )}
           </span>
         </div>
+        <div>
+          <hr className={styles.horizontalLine} />
+      </div>
         </div>
       ))}
     </div>
