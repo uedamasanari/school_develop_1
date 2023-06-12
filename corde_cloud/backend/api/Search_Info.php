@@ -53,11 +53,6 @@ class Search_info {
         //$tweetId = 1; // ツイートIDを指定
         //$likeCount = $dbManager->getTweetLikesCount($tweetId);
         //echo "Tweet ID: " . $tweetId . ", Like Count: " . $likeCount;
-    }
-
-
-
-
-    
+    }  
 }
 ?>
