@@ -53,6 +53,31 @@ class Search_info {
         //$tweetId = 1; // ツイートIDを指定
         //$likeCount = $dbManager->getTweetLikesCount($tweetId);
         //echo "Tweet ID: " . $tweetId . ", Like Count: " . $likeCount;
-    }  
+    } 
+
+    public function login($mail_address, $password) {
+        $dbManager = new DBManager();
+        $pdo = $dbManager->GetDB(); // データベース接続を取得
+        // メールアドレスを使用してユーザーを検索
+        $sql = "SELECT * FROM USER_info WHERE mail_address = :mail_address";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':mail_address', $mail_address);
+        $stmt->execute();
+
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user) {
+            // パスワードの認証
+            if (password_verify($password, $user['password'])) {
+                // 認証成功
+                // セッションなどの認証情報を設定
+                $_SESSION['user_id'] = $user['user_id'];
+                $_SESSION['user_name'] = $user['user_name'];
+                // 他の必要な情報をセットすることも可能
+                return true;
+            }
+        }
+        return false; // 認証失敗
+    }
 }
 ?>
