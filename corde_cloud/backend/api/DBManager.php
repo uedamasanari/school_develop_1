@@ -10,7 +10,7 @@
         $password = 'your_password';
         try {
             $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
-             echo "success";
+            return $pdo; // PDOオブジェクトを返す
          } catch (PDOException $e) {
             echo "NO";
                 throw $e;
