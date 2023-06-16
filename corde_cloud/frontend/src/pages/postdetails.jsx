@@ -22,6 +22,7 @@ const Postdetails = () => {
     setBooks(books ? books - 1 : books + 1);
   };
 
+  
   return (
     <>
       <MyHeader title={"詳細"} />
