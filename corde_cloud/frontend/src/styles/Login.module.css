@@ -6,6 +6,8 @@
     height: 100vh;
     color: white;
     font-family: Arial, sans-serif;
+    position: relative;
+    min-height: 100vh;
   }
   
   .icon {
@@ -22,11 +24,30 @@
   
   .button {
     width: 100px;
-    height: 30px;
+    height: 40px;
     background-color: #FFFFFF;
     color: #8C6A63;
     border: none;
     border-radius: 4px;
     margin-top: 8px;
     cursor: pointer;
+  }
+
+  .buttoninsert {
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    background-color: #FFFFFF;
+    color: #8C6A63;
+    border: none;
+    border-radius: 4px;
+    margin-top: 8px;
+    cursor: pointer;
+  }
+
+  .shape {
+    width: 300px;
+    height: 500px;
+    background-color: #8C6A63;
   }
