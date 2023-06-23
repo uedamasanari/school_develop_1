@@ -76,4 +76,3 @@ class Search_info {
     }
 }
 ?>
-`/code_cloud/backend/api/getTweetLikesCount.php?tweet_id=${tweetId}`

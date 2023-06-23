@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import styles from '@/styles/Login.module.css'
 import MyHeader from "@/components/MyHeader";
+import { PHASE_PRODUCTION_BUILD } from 'next/dist/shared/lib/constants';
 
 function Login() {
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
-
 useEffect(() => {
   console.log('Email:', email);
   console.log('Password:', password);
@@ -21,6 +21,12 @@ useEffect(() => {
 
   const handleLogin = () => {
     // ログイン処理をここに実装する
+    const [data, setData] = useState<Data>({
+      waiting_mail: "",
+      waiting_text: "",
+      });
+
+      
     console.log('ログインがクリックされました');
     console.log('Email:', email);
     console.log('Password:', password);
