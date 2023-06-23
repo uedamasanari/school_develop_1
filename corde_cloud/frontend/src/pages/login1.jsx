@@ -1,7 +1,10 @@
+import React from "react";
 import React, { useState, useEffect } from 'react'
+import axios from "axios";
 import styles from '@/styles/Login.module.css'
 import MyHeader from "@/components/MyHeader";
 import { PHASE_PRODUCTION_BUILD } from 'next/dist/shared/lib/constants';
+
 
 function Login() {
 const [email, setEmail] = useState('');
@@ -20,6 +23,7 @@ useEffect(() => {
   };
 
   const handleLogin = () => {
+  
     // ログイン処理をここに実装する
     const [data, setData] = useState<Data>({
       waiting_mail: "",
@@ -34,7 +38,7 @@ useEffect(() => {
 
   const handleSignUp = () => {
     // 新規登録処理をここに実装する
-    console.log('新規登録がクリックされました');
+    
   };
 
   return (
