@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import styles from '@/styles/Insert.module.css'
+import styles from "@/styles/gpt/Insert.module.css"
 import MyHeader from "@/components/MyHeader";
 
 function Login() {
@@ -35,16 +35,20 @@ useEffect(() => {
 
   return (
     
-    <div className="container">
-      <MyHeader title={"新規登録"} />
-      <h1 className="icon">アイコン</h1>
-      <input className="input" type="text" value={email} onChange={handleEmailChange} placeholder="メールアドレス" />
+    <div className={styles.container}>
+      <MyHeader title={"ログイン"} />
+      <img src="Icon/Icon.png" alt="" className={styles.icon} />
+      <div className={styles.shape}>
+      <input className={styles.input} type="text" value={email} onChange={handleEmailChange} placeholder="Mailaddress" />
       <br />
-      <input className="input" type="password" value={password} onChange={handlePasswordChange} placeholder="パスワード" />
+      <input className={styles.inputpass} type="password" value={password} onChange={handlePasswordChange} placeholder="Password" />
       <br />
-      <button className="button" onClick={handleLogin}>登録</button>
-      <button className="button" onClick={handleSignUp}>ログイン</button>
+      <div className={styles.buttonContainer}>
+      <button className={styles.button} onClick={handleLogin}>ログイン</button>
+      <button className={styles.buttoninsert} onClick={handleSignUp}>新規登録</button>
+      </div>
     </div>
+  </div>
   );
 }
 
