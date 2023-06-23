@@ -20,6 +20,7 @@ class Search_info {
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $data[] = array(
                 'id' => $id,
+                'icon_path' => $row['icon_path'],
                 'user_name' => $row['user_name'],
                 'mail_address' => $row['mail_address']
             );
@@ -27,9 +28,9 @@ class Search_info {
         }
         
         foreach ($data as $row) {
-            echo 'ID: ' . $row['id'] . ', ';
-            echo '名前: ' . $row['user_name'] . ', ';
-            echo 'メアド: ' . $row['mail_address'] . '<br>';
+            // echo $row['id'] . ', ';//ID
+            echo $row['user_name'] . ', ';//名前
+            echo $row['mail_address'] . '<br>';//メアド
         }
         return $data;
     }
