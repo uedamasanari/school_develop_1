@@ -47,12 +47,7 @@ class Search_info {
 
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         $likeCount = $result['like_count'] ?? 0;
-        return $likeCount;//いいね数を返す
-        //フロント側の呼び方
-        //$dbManager = new Search_info();
-        //$tweetId = 1; // ツイートIDを指定
-        //$likeCount = $dbManager->getTweetLikesCount($tweetId);
-        //echo "Tweet ID: " . $tweetId . ", Like Count: " . $likeCount;
+        echo json_encode([$likeCount]); // 結果をJSON形式で返す
     } 
 
     public function login($mail_address, $password) {
@@ -81,3 +76,4 @@ class Search_info {
     }
 }
 ?>
+`/code_cloud/backend/api/getTweetLikesCount.php?tweet_id=${tweetId}`
