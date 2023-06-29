@@ -9,6 +9,14 @@ const Registration = () => {
     password: "",
   });
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
   const insertData = () => {
     axios
       .post("http://localhost:8000/insertData.php", data)
@@ -25,26 +33,30 @@ const Registration = () => {
       <input
         type="text"
         placeholder="ユーザー名"
+        name="user_name"
         value={data.user_name}
-        onChange={(e) => setData({ ...data, user_name: e.target.value })}
+        onChange={handleChange}
       />
       <input
         type="text"
         placeholder="コメント"
+        name="comment"
         value={data.comment}
-        onChange={(e) => setData({ ...data, user_coment: e.target.value })}
+        onChange={handleChange}
       />
       <input
         type="email"
         placeholder="メールアドレス"
+        name="mail_address"
         value={data.mail_address}
-        onChange={(e) => setData({ ...data, mail_address: e.target.value })}
+        onChange={handleChange}
       />
       <input
         type="password"
         placeholder="パスワード"
+        name="password"
         value={data.password}
-        onChange={(e) => setData({ ...data, password: e.target.value })}
+        onChange={handleChange}
       />
       <button onClick={insertData}>登録</button>
     </div>
