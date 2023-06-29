@@ -19,7 +19,7 @@ const Registration = () => {
 
   const insertData = () => {
     axios
-      .post("http://localhost:8000/insertData.php", data)
+      .post("http://localhost:8000/Insert.php", data)
       .then((response) => {
         console.log("success");
       })
@@ -30,6 +30,7 @@ const Registration = () => {
 
   return (
     <div>
+      <form action="Insert.php" method="POST">
       <input
         type="text"
         placeholder="ユーザー名"
@@ -40,8 +41,8 @@ const Registration = () => {
       <input
         type="text"
         placeholder="コメント"
-        name="comment"
-        value={data.comment}
+        name="user_coment"
+        value={data.user_coment}
         onChange={handleChange}
       />
       <input
@@ -59,6 +60,7 @@ const Registration = () => {
         onChange={handleChange}
       />
       <button onClick={insertData}>登録</button>
+    </form>
     </div>
   );
 };
