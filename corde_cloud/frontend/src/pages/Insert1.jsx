@@ -21,7 +21,7 @@ const Registration = () => {
   };
 
   return (
-    <>
+    <div>
       <input
         type="text"
         placeholder="ユーザー名"
@@ -47,7 +47,7 @@ const Registration = () => {
         onChange={(e) => setData({ ...data, password: e.target.value })}
       />
       <button onClick={insertData}>登録</button>
-    </>
+    </div>
   );
 };
 
