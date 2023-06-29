@@ -7,7 +7,4 @@ require_once 'Insert.php';
 require_once 'Search_Info.php';
 $dbManager = new DBManager();
 $dbManager->GetDB();
-
-$search = new Search_info();
-$search->SearchUser();
 ?>

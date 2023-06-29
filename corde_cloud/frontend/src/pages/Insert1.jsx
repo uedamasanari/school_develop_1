@@ -3,9 +3,9 @@ import axios from "axios";
 
 const Registration = () => {
   const [data, setData] = useState({
-    name: "",
+    user_name: "",
     comment: "",
-    email: "",
+    mail_address: "",
     password: "",
   });
 
@@ -25,7 +25,7 @@ const Registration = () => {
       <input
         type="text"
         placeholder="ユーザー名"
-        value={data.name}
+        value={data.user_name}
         onChange={(e) => setData({ ...data, user_name: e.target.value })}
       />
       <input
@@ -37,7 +37,7 @@ const Registration = () => {
       <input
         type="email"
         placeholder="メールアドレス"
-        value={data.email}
+        value={data.mail_address}
         onChange={(e) => setData({ ...data, mail_address: e.target.value })}
       />
       <input
