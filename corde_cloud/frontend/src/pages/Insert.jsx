@@ -36,16 +36,20 @@ useEffect(() => {
   return (
     
     <div className={styles.container}>
-      <MyHeader title={"ログイン"} />
+      <MyHeader title={"新規登録"} />
       <img src="Icon/Icon.png" alt="" className={styles.icon} />
       <div className={styles.shape}>
+      <input className={styles.input} type="text" value={email} onChange={handleEmailChange} placeholder="Username" />
+      <br />
       <input className={styles.input} type="text" value={email} onChange={handleEmailChange} placeholder="Mailaddress" />
       <br />
       <input className={styles.inputpass} type="password" value={password} onChange={handlePasswordChange} placeholder="Password" />
       <br />
+      <input className={styles.inputpass} type="password" value={password} onChange={handlePasswordChange} placeholder="Password" />
+      <br />
       <div className={styles.buttonContainer}>
-      <button className={styles.button} onClick={handleLogin}>ログイン</button>
-      <button className={styles.buttoninsert} onClick={handleSignUp}>新規登録</button>
+      <button className={styles.button} onClick={handleLogin}>新規登録</button>
+      <button className={styles.buttoninsert} onClick={handleSignUp}>ログインへ</button>
       </div>
     </div>
   </div>
