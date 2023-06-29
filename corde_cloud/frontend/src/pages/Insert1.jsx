@@ -1,54 +1,54 @@
-import React, { useState, useEffect } from 'react'
-import styles from '@/styles/Insert.module.css'
-import MyHeader from "@/components/MyHeader";
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
-function Login() {
-const [email, setEmail] = useState('');
-const [password, setPassword] = useState('');
+const Registration = () => {
+  const [data, setData] = useState({
+    name: "",
+    comment: "",
+    email: "",
+    password: "",
+  });
 
-useEffect(() => {
-  console.log('Email:', email);
-  console.log('Password:', password);
-}, [email, password]);
-
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleLogin = () => {
-    // 新規登録処理をここに実装する
-    console.log('新規登録がクリックされました');
-    console.log('Username:', username);
-    console.log('Email:', email);
-    console.log('Password:', password);
-    console.log('Passwordcheck:', passwordcheck);
-  };
-
-  const handleSignUp = () => {
-    // ログイン機能移動処理をここに実装する
-    console.log('ログインがクリックされました');
+  const insertData = () => {
+    axios
+      .post("http://localhost:8000/insertData.php", data)
+      .then((response) => {
+        console.log("success");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
-    
-    <div className="container">
-      <MyHeader title={"新規登録"} />
-      <h1 className="icon">アイコン</h1>
-      <input className="input" type="text" value={email} onChange={handleEmailChange} placeholder="メールアドレス" />
-      <br />
-      <input className="input" type="password" value={password} onChange={handlePasswordChange} placeholder="パスワード" />
-      <br />
-      <button className="button" onClick={handleLogin}>登録</button>
-      <button className="button" onClick={handleSignUp}>ログイン</button>
-    </div>
+    <>
+      <input
+        type="text"
+        placeholder="ユーザー名"
+        value={data.name}
+        onChange={(e) => setData({ ...data, name: e.target.value })}
+      />
+      <input
+        type="text"
+        placeholder="コメント"
+        value={data.comment}
+        onChange={(e) => setData({ ...data, comment: e.target.value })}
+      />
+      <input
+        type="email"
+        placeholder="メールアドレス"
+        value={data.email}
+        onChange={(e) => setData({ ...data, email: e.target.value })}
+      />
+      <input
+        type="password"
+        placeholder="パスワード"
+        value={data.password}
+        onChange={(e) => setData({ ...data, password: e.target.value })}
+      />
+      <button onClick={insertData}>登録</button>
+    </>
   );
-}
+};
 
-export default Login;
+export default Registration;
