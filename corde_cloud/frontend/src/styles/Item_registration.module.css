@@ -27,12 +27,7 @@
 
 
 /* ファイル選択 */
-.file {
 
-}
-.image_tab input[type="file"] {
-  display: none;
-}
 
 .fileLabel {
   background-color: #8C6A63;
@@ -52,13 +47,16 @@
 }
 
 .imageContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-top: 20px;
+  text-align: center;
 }
 
 .imageContainer img {
+  max-width: 100%;
+  height: auto;
+}
+
+.image {
   max-width: 100%;
   height: auto;
 }

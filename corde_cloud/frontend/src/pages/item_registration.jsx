@@ -68,6 +68,9 @@ const Item_registration = () => {
 
 
 
+
+
+
         <div className={styles.form_group_tag}>
           <label>タグ</label>
           <select  multiple={true} value={selectedTag} onChange={handleTagChange}>
