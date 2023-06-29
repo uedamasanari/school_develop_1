@@ -15,16 +15,7 @@ class Insert {
         $stmt->bindParam(':mail_address', $mail_address);
         $stmt->bindParam(':password', $hashedPassword);
         $stmt->execute();
-         // Assuming you're receiving JSON format
-  $inputJSON = file_get_contents('php://input');
-  $input = json_decode($inputJSON, TRUE); //convert JSON into array
-  
-  $waiting_mail = $input['waiting_mail'];
-  $waiting_text = $input['waiting_text'];
-  
-  $dataInsert = new Insert();
-  $dataInsert->Insertuser_info();
-    } 
+    }
     //$user_name = "John";//名前の指定
     //$user_coment = "Hello!";//コメント
     //$mail_address = "john@example.com";//メアドの指定
