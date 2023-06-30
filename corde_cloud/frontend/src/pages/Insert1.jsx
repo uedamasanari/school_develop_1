@@ -1,54 +1,66 @@
-import React, { useState, useEffect } from 'react'
-import styles from '@/styles/Insert.module.css'
-import MyHeader from "@/components/MyHeader";
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
-function Login() {
-const [email, setEmail] = useState('');
-const [password, setPassword] = useState('');
+const Registration = () => {
+  const [data, setData] = useState({
+    user_name: "",
+    user_coment: "",
+    mail_address: "",
+    password: "",
+  });
 
-useEffect(() => {
-  console.log('Email:', email);
-  console.log('Password:', password);
-}, [email, password]);
-
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleLogin = () => {
-    // 新規登録処理をここに実装する
-    console.log('新規登録がクリックされました');
-    console.log('Username:', username);
-    console.log('Email:', email);
-    console.log('Password:', password);
-    console.log('Passwordcheck:', passwordcheck);
-  };
-
-  const handleSignUp = () => {
-    // ログイン機能移動処理をここに実装する
-    console.log('ログインがクリックされました');
+  const   __construct= () => {
+    axios
+      .post("http://localhost:8000/Insert.php", data)
+      .then((response) => {
+        console.log("success");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
-    
-    <div className="container">
-      <MyHeader title={"新規登録"} />
-      <h1 className="icon">アイコン</h1>
-      <input className="input" type="text" value={email} onChange={handleEmailChange} placeholder="メールアドレス" />
-      <br />
-      <input className="input" type="password" value={password} onChange={handlePasswordChange} placeholder="パスワード" />
-      <br />
-      <button className="button" onClick={handleLogin}>登録</button>
-      <button className="button" onClick={handleSignUp}>ログイン</button>
+    <div>
+      <input
+        type="text"
+        placeholder="ユーザー名"
+        name="user_name"
+        value={data.user_name}
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        placeholder="コメント"
+        name="user_coment"
+        value={data.user_coment}
+        onChange={handleChange}
+      />
+      <input
+        type="email"
+        placeholder="メールアドレス"
+        name="mail_address"
+        value={data.mail_address}
+        onChange={handleChange}
+      />
+      <input
+        type="password"
+        placeholder="パスワード"
+        name="password"
+        value={data.password}
+        onChange={handleChange}
+      />
+      <button onClick={insertData}>登録</button>
     </div>
   );
-}
+};
 
-export default Login;
+export default Registration;
