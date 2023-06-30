@@ -4,7 +4,7 @@ import axios from "axios";
 const Registration = () => {
   const [data, setData] = useState({
     user_name: "",
-    user_coment: "",
+    comment: "",
     mail_address: "",
     password: "",
   });
@@ -17,8 +17,9 @@ const Registration = () => {
     }));
   };
 
-  const   __construct= () => {
+  const insertData = () => {
     axios
+      .post("http://localhost:8000/insertData.php", data)
       .post("http://localhost:8000/Insert.php", data)
       .then((response) => {
         console.log("success");
@@ -30,6 +31,7 @@ const Registration = () => {
 
   return (
     <div>
+      <form action="Insert.php" method="POST">
       <input
         type="text"
         placeholder="ユーザー名"
@@ -40,6 +42,8 @@ const Registration = () => {
       <input
         type="text"
         placeholder="コメント"
+        name="comment"
+        value={data.comment}
         name="user_coment"
         value={data.user_coment}
         onChange={handleChange}
@@ -59,8 +63,7 @@ const Registration = () => {
         onChange={handleChange}
       />
       <button onClick={insertData}>登録</button>
+    </form>
     </div>
   );
 };
-
-export default Registration;
