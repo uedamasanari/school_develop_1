@@ -17,7 +17,7 @@ const Registration = () => {
     }));
   };
 
-  const insertData = () => {
+  const insert = () => {
     axios
       .post("http://localhost:8000/Insert.php", data)
       .then((response) => {
@@ -30,7 +30,6 @@ const Registration = () => {
 
   return (
     <div>
-      <form action="Insert.php" method="POST">
       <input
         type="text"
         placeholder="ユーザー名"
@@ -59,8 +58,7 @@ const Registration = () => {
         value={data.password}
         onChange={handleChange}
       />
-      <button onClick={insertData}>登録</button>
-    </form>
+      <button onClick={insert}>登録</button>
     </div>
   );
 };

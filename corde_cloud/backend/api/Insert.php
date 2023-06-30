@@ -17,20 +17,6 @@ class Insert {
         $stmt->bindParam(':password', $hashedPassword);
         $stmt->execute();
     }
-    
-    public function insertTag($tag_name, $tag_color, $user_id) {
-        $dbManager = new DbConfig();
-        $pdo = $dbManager->GetDB(); // データベース接続を取得
-        $sql = "INSERT INTO tag (tag_id, tag_name, tag_color, user_id)
-                VALUES (:tag_id, :tag_name, :tag_color, :user_id)";
-        $stmt = $pdo->prepare($sql);
-
-        $stmt->bindParam(':tag_id', $tag_id);
-        $stmt->bindParam(':tag_name', $tag_name);
-        $stmt->bindParam(':tag_color', $tag_color);
-        $stmt->bindParam(':user_id', $user_id);
-        $stmt->execute();
-    }
 }
 $inputJSON = file_get_contents('php://input');
 $input = json_decode($inputJSON, true);
