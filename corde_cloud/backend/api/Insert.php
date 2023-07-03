@@ -16,6 +16,8 @@ class Insert {
         $stmt->bindParam(':password', $hashedPassword);
         $stmt->execute();
     }
+
+    public function Insert_picture()
 }
 
 $inputJSON = file_get_contents('php://input');
