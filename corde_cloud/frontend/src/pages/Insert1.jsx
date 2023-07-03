@@ -2,27 +2,22 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const Registration = () => {
-  const [data, setData] = useState({
-    user_name: "",
-    comment: "",
-    mail_address: "",
-    password: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+  const [name, setName] = useState();
+  const [pass, setPass] = useState();
+  const [comment, setComment] = useState();
+  const [mail, setMail] = useState();
 
   const insertData = () => {
+    console.log(name,pass,comment,mail)
     axios
-      .post("http://localhost:8000/insertData.php", data)
-      .post("http://localhost:8000/Insert.php", data)
+      .post("http://localhost:8000/api/Insert.php", {
+        user_name: name,
+        comment: comment,
+        mail_address: mail,
+        password: pass
+      })
       .then((response) => {
-        console.log("success");
+        console.log(response);
       })
       .catch((error) => {
         console.log(error);
@@ -31,39 +26,33 @@ const Registration = () => {
 
   return (
     <div>
-      <form action="Insert.php" method="POST">
       <input
         type="text"
         placeholder="ユーザー名"
         name="user_name"
-        value={data.user_name}
-        onChange={handleChange}
+        onChange={(e)=>setName(e.target.value)}
       />
       <input
         type="text"
         placeholder="コメント"
-        name="comment"
-        value={data.comment}
-        name="user_coment"
-        value={data.user_coment}
-        onChange={handleChange}
+        name="user_comment"
+        onChange={(e)=>setComment(e.target.value)}
       />
       <input
         type="email"
         placeholder="メールアドレス"
         name="mail_address"
-        value={data.mail_address}
-        onChange={handleChange}
+        onChange={(e)=>setMail(e.target.value)}
       />
       <input
         type="password"
         placeholder="パスワード"
         name="password"
-        value={data.password}
-        onChange={handleChange}
+        onChange={(e)=>setPass(e.target.value)}
       />
       <button onClick={insertData}>登録</button>
-    </form>
     </div>
   );
 };
+
+export default Registration;
