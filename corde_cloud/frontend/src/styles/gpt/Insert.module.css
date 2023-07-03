@@ -1,81 +1,93 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    color: white;
-    font-family: Arial, sans-serif;
-    position: relative;
-    min-height: 100vh;
-  }
-  
-  .icon {
-    width: 120px;
-    height: 120px;
-    border-radius: 40px;
-    margin-top: 30px;
-    margin-bottom: 0px;
-  }
-  
-  .input {
-    width: 150px;
-    height: 20px;
-    padding: 20px;
-    display: block;
-    margin: 0 auto;
-    margin-top: 10px;
-    margin-bottom: 0px;
-    text-align: center;
-    border: none;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  font-family: Arial, sans-serif;
+  position: relative;
+  min-height: 100vh;
+}
 
-  .inputpass{
-    width: 150px;
-    height: 20px;
-    padding: 20px;
-    display: block;
-    margin: 0 auto;
-    margin-top: 10px;
-    margin-bottom: 0px;
-    text-align: center;
-    border: none;
-  }
-  
-  .button {
-    width: 100px;
-    height: 40px;
-    background-color: #FFFFFF;
-    color: #8C6A63;
-    border: none;
-    border-radius: 9px;
-    margin-top: 1px;
-    cursor: pointer;
-  }
+.icon {
+  width: 150px;
+  height: 150px;
+  border-radius: 40px;
+  margin-top: 30px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex; /* 画像の中央ぞろえ */
+  justify-content: center; /* 画像の中央ぞろえ */
+  align-items: center; /* 画像の中央ぞろえ */
+}
 
-  .buttoninsert {
-    width: 100px;
-    height: 30px;
-    position: absolute;
-    bottom: 0;
-    background-color: #FFFFFF;
-    color: #8C6A63;
-    border: none;
-    border-radius: 10px;
-    margin-top: 0px;
-    cursor: pointer;
-  }
+.input {
+  width: 150px;
+  height: 20px;
+  padding: 20px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  text-align: center;
+  border: none;
+}
 
-  .shape {
-    width: 250px;
-    height: 400px;
-    background-color: #8C6A63;
-    border-radius: 9px;
-    margin-top: 50px;
-  }
+.inputpass {
+  width: 150px;
+  height: 20px;
+  padding: 20px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 60px;
+  text-align: center;
+  border: none;
+}
 
-  .buttonContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.button {
+  width: 100px;
+  height: 40px;
+  background-color: #FFFFFF;
+  color: #8C6A63;
+  border: none;
+  border-radius: 9px;
+  margin-top: 1px;
+  cursor: pointer;
+  margin: 0 auto;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.buttoninsert {
+  width: 100px;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  background-color: #FFFFFF;
+  color: #8C6A63;
+  border: none;
+  border-radius: 10px;
+  margin-top: 0px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.shape {
+  width: 250px;
+  height: 450px;
+  background-color: #8C6A63;
+  border-radius: 9px;
+  margin-top: 50px;
+  margin: 0 auto;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
