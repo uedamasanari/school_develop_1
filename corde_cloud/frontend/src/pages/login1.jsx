@@ -8,8 +8,8 @@ const Registration = () => {
     console.log(email,password)
     axios
     .post("http://localhost:8000/api/login.php",{
-      mail_address: email,
-      $password: password
+      email: email,
+      password: password
     })
     .then((response) => {
       console.log(response);
