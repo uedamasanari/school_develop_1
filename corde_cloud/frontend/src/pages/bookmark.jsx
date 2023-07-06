@@ -47,7 +47,7 @@ const Bookmark = () =>  {
             <p className={styles.p}>@koshiki</p>
           </div>
           <hr className={styles.horizontalLine} />
-          <img src="Timeline/rei1.jpg" className={styles.img} alt="post-image"></img>
+          <img src="Timeline/rei1.svg" className={styles.img} alt="post-image"></img>
           <hr className={styles.horizontalLine} />
         </div>
         <div className={styles.icons}>
