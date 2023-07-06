@@ -6,11 +6,10 @@ const Registration = () => {
   const [pass, setPass] = useState();
   const [comment, setComment] = useState();
   const [mail, setMail] = useState();
-
   const insertData = () => {
     console.log(name,pass,comment,mail)
     axios
-      .post("http://localhost:8000/api/Insert.php", {
+    .post("http://localhost:8000/api/Insert.php", {
         user_name: name,
         comment: comment,
         mail_address: mail,
@@ -31,11 +30,11 @@ const Registration = () => {
         placeholder="ユーザー名"
         name="user_name"
         onChange={(e)=>setName(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="コメント"
-        name="user_comment"
+        />
+        <input
+          type="text"
+          placeholder="コメント"
+          name="user_comment"
         onChange={(e)=>setComment(e.target.value)}
       />
       <input
@@ -49,10 +48,9 @@ const Registration = () => {
         placeholder="パスワード"
         name="password"
         onChange={(e)=>setPass(e.target.value)}
-      />
-      <button onClick={insertData}>登録</button>
-    </div>
-  );
-};
-
-export default Registration;
+        />
+        <button onClick={insertData}>登録</button>
+      </div>
+    );
+  };
+  export default Registration;
