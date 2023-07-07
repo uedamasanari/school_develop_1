@@ -17,7 +17,7 @@ function login($email, $password) {
 
             if ($user) {
                 $hashedPassword = $user['password'];
-                if ($password === $hashedPassword) {  // パスワードをハッシュ化せずに比較
+                if (password_verify($password, $hashedPassword)) {
                     // ログイン成功時の処理
                     $response = [
                         'status' => 'success',
@@ -63,5 +63,9 @@ $input = json_decode($inputJSON, true);
 $email = $input['email'];
 $password = $input['password'];
 
+// 入力されたパスワードをハッシュ化する
+$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
 // ログイン処理の呼び出し
-login($email, $password);
+login($email, $hashedPassword);
+?>
