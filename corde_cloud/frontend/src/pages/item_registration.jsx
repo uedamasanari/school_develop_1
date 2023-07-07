@@ -6,7 +6,6 @@ import MyHeader from "@/components/MyHeader";
 const Item_registration = () => {
   const [itemName, setItemName] = useState('');
   const [selectedFile, setSelectedFile] = useState(null);
-  const [selectedTag, setSelectedTag] = useState('');
   const [itemDescription, setItemDescription] = useState('');
 
   const handleItemNameChange = (event) => {
@@ -18,9 +17,6 @@ const Item_registration = () => {
     setSelectedFile(file);
   };
 
-  const handleTagChange = (event) => {
-    setSelectedTag(event.target.value);
-  };
 
   const handleDescriptionChange = (event) => {
     setItemDescription(event.target.value);
@@ -69,25 +65,9 @@ const Item_registration = () => {
 
 
 
-
-
-        <div className={styles.form_group_tag}>
-          <label>タグ</label>
-          <select  multiple={true} value={selectedTag} onChange={handleTagChange}>
-            <option value="">タグを選択してください</option>
-            <option value="tag1">タグ1</option>
-            <option value="tag2">タグ2</option>
-            <option value="tag3">タグ3</option>
-          </select>
-        </div>
-
-
-        <button className={styles.add_button}>#追加</button>
-
-
         <div className={styles.form_group}>
           {/* 詳細 */}
-          <input value={itemDescription} onChange={handleDescriptionChange} className={styles.item_info} half placeholder="アイテム詳細"/>
+          <input type="text" value={itemDescription} onChange={handleDescriptionChange} className={styles.item_info} half placeholder="アイテム詳細"/>
         </div>
 
 

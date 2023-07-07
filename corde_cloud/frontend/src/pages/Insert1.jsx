@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Registration = () => {
   const [data, setData] = useState({
@@ -9,6 +10,8 @@ const Registration = () => {
     password: "",
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setData((prevData) => ({
@@ -17,11 +20,12 @@ const Registration = () => {
     }));
   };
 
-  const   __construct= () => {
+  const   insertData= () => {
     axios
       .post("http://localhost:8000/Insert.php", data)
       .then((response) => {
         console.log("success");
+        navigate("/mypage"); // ページ遷移
       })
       .catch((error) => {
         console.log(error);
@@ -58,7 +62,10 @@ const Registration = () => {
         value={data.password}
         onChange={handleChange}
       />
-      <button onClick={insertData}>登録</button>
+
+      <button type="button" onClick={insertData}>
+        登録
+      </button>
     </div>
   );
 };

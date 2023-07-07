@@ -8,6 +8,7 @@ import MyHeader from "@/components/MyHeader";
   const mypage = () => {
 
     const [expanded, setExpanded] = useState(false);
+
   
     const handleToggleExpand = () => {
       setExpanded(!expanded);
@@ -81,7 +82,7 @@ import MyHeader from "@/components/MyHeader";
 
       <div className={styles.header}>
 
-      <img className={styles.setting_svc} src='profile/Setting.svg' />
+      <img className={styles.setting_svc} src='profile/Setting.svg'/>
 
       </div>
 
