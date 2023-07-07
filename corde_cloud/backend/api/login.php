@@ -16,8 +16,7 @@ function login($email, $password) {
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if ($user) {
-                $hashedPassword = $user['password'];
-                if (password_verify($password, $hashedPassword)) {
+                if ($password == $user['password']) {
                     // ログイン成功時の処理
                     $response = [
                         'status' => 'success',
@@ -63,9 +62,6 @@ $input = json_decode($inputJSON, true);
 $email = $input['email'];
 $password = $input['password'];
 
-// 入力されたパスワードをハッシュ化する
-$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
 // ログイン処理の呼び出し
-login($email, $hashedPassword);
+login($email, $password);
 ?>

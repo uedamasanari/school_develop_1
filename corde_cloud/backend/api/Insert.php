@@ -5,7 +5,6 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 require_once 'DBManager.php';
 class Insert {
     public function Insertuser_info($user_name, $user_coment, $mail_address, $password) {
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         $dbManager = new DBManager();
         $pdo = $dbManager->GetDB(); // データベース接続を取得
         $sql = "INSERT INTO USER_info (user_name, user_coment, mail_address, password) VALUES (:user_name, :user_coment, :mail_address, :password)";
@@ -13,7 +12,7 @@ class Insert {
         $stmt->bindParam(':user_name', $user_name);
         $stmt->bindParam(':user_coment', $user_coment);
         $stmt->bindParam(':mail_address', $mail_address);
-        $stmt->bindParam(':password', $hashedPassword);
+        $stmt->bindParam(':password', $password);
         $stmt->execute();
     }
 }
