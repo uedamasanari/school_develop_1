@@ -1,3 +1,8 @@
+.size {
+    height: 738px;
+    overflow: scroll;
+}
+
 .container {
     margin-top: 8px;
 }
