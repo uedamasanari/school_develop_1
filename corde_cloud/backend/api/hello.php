@@ -7,4 +7,7 @@ require_once 'Insert.php';
 require_once 'Search_Info.php';
 $dbManager = new DBManager();
 $dbManager->GetDB();
+$insert = new Insert();
+$insert->Insertuser_info('John Doe', 'Hello!', 'john@example.com', 'password123');
 ?>
+

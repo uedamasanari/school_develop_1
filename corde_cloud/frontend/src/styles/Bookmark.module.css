@@ -40,9 +40,28 @@
   
 .rightIcon {
     margin-left: auto;
+    margin-right: 8px;
 }
 
 .horizontalLine {
     border-top: 1px solid black; /* 横線のスタイル */
     width: 100%; /* 横線がコンテナの幅いっぱいに広がるように追加 */
+}
+
+.heart {
+    color: gray;
+    cursor: pointer;
+}
+
+.red_heart {
+    color: red;
+}
+
+.book {
+    color: gray;
+    cursor: pointer;
+}
+
+.black_book {
+    color: black;
 }
