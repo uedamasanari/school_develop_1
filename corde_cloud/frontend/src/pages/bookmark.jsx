@@ -36,6 +36,7 @@ const Bookmark = () =>  {
     
     <div>
       <MyHeader title={"ブックマーク"} />
+      <div className={styles.size}>
       {items.map((item, index) => (
         <div className={styles.container}>
           <div>
@@ -79,6 +80,7 @@ const Bookmark = () =>  {
       </div>
         </div>
       ))}
+      </div>
     </div>
     
   );
