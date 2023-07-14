@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react'
 import styles from '@/styles/Searchresults.module.css'
 
 export default function Home() {
+
+  const handleClick = () => {
+    window.location.href = '/itemdetail';
+  }
+
   const dummyData = [
     {
       id:1,
@@ -35,6 +40,7 @@ export default function Home() {
       id:8,
       imageURL:'searchResults/sample.jpeg'
     }
+
   ];
 
 
@@ -46,6 +52,7 @@ export default function Home() {
           <img
             src={item.imageURL}
             alt={`Image ${item.id}`}
+            onClick={handleClick}
             style={{width:'147px' , height:'155px' , padding:'10px'}}
           />
           {(index + 1) % 2 === 0 && <br />} {/* 2つごとに改行 */}

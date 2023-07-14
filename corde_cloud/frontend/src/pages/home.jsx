@@ -66,6 +66,7 @@ const home = () => {
         <img
           src={item.imageURL}
           alt={`Image ${item.id}`}
+          onClick={handleClick}
           style={{width:'114px' , height:'131px' , padding:'10px'}}
         />
         {(index + 1) % 3 === 0 && <br />} {/* 3つごとに改行 */}
