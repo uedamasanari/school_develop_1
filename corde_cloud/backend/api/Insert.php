@@ -15,6 +15,17 @@ class Insert {
         $stmt->bindParam(':password', $password);
         $stmt->execute();
     }
+    public function InsertClose(){
+        $dbManager = new DBManager();
+        $pdo = $dbManager->GetDB(); // データベース接続を取得
+        $sql = "INSERT INTO USER_info (user_name, user_coment, mail_address, password) VALUES (:user_name, :user_coment, :mail_address, :password)";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':user_name', $user_name);
+        $stmt->bindParam(':user_coment', $user_coment);
+        $stmt->bindParam(':mail_address', $mail_address);
+        $stmt->bindParam(':password', $password);
+        $stmt->execute();
+    }
 }
 $inputJSON = file_get_contents('php://input');
 $input = json_decode($inputJSON, true);
