@@ -4,6 +4,12 @@ const Registration = () => {
   const [email, setMail] = useState();
   const [password, setPass] = useState();
   const [loginStatus, setLoginStatus] = useState();
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (isLoggedIn) {
+      setLoginStatus("ログイン済みです");
+    }
+  }, []);
   const Login =() =>{
     console.log(email,password)
     axios
@@ -14,10 +20,12 @@ const Registration = () => {
     .then((response) => {
       console.log(response);
       setLoginStatus(response.data.message);
+      localStorage.setItem("isLoggedIn", "true");
     })
     .catch((error) => {
       console.log(error);
       setLoginStatus("Error occurred");
+      localStorage.removeItem("isLoggedIn");
     });
   };
   return(
