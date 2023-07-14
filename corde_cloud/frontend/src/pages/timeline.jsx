@@ -4,6 +4,10 @@ import styles from '@/styles/Timeline.module.css';
 import axios from "axios";
 
 const Timeline = () =>  {
+  const postdetailsClick = () => {
+    location.href = "/postdetails";
+  };
+
   const items = [1, 2, 3];
   const [isLiked, setIsLiked] = useState(false);
   const [likes, setLikes] = useState(0);
@@ -48,7 +52,7 @@ const Timeline = () =>  {
             <p className={styles.p}>@koshiki</p>
           </div>
           <hr className={styles.horizontalLine} />
-          <img src="Timeline/rei2.svg" className={styles.img} alt="post-image"></img>
+          <img src="Timeline/rei2.svg" className={styles.img} alt="post-image" onClick={postdetailsClick}></img>
           <hr className={styles.horizontalLine} />
         </div>
         <div className={styles.icons}>

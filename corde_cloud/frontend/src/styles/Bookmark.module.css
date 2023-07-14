@@ -48,6 +48,11 @@
     width: 100%; /* 横線がコンテナの幅いっぱいに広がるように追加 */
 }
 
+.size {
+    height: 738px;
+    overflow: scroll;
+}
+
 .heart {
     color: gray;
     cursor: pointer;

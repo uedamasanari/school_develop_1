@@ -16,8 +16,7 @@ function login($email, $password) {
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if ($user) {
-                $hashedPassword = $user['password'];
-                if ($password === $hashedPassword) {  // パスワードをハッシュ化せずに比較
+                if ($password == $user['password']) {
                     // ログイン成功時の処理
                     $response = [
                         'status' => 'success',
@@ -65,3 +64,4 @@ $password = $input['password'];
 
 // ログイン処理の呼び出し
 login($email, $password);
+?>
