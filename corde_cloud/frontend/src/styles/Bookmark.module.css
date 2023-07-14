@@ -1,0 +1,72 @@
+.container {
+    margin-top: 8px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.p {
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.img {
+    width: 100%; /* 画像の幅を親要素に合わせる */
+    height: auto; /* アスペクト比を維持したまま、高さを自動調整する */
+}
+
+.icons {
+    display: flex; /* アイコンを同じ行に配置するために追加 */
+    justify-content: space-between; /* アイコンを行の両端に配置するように修正 */
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+  
+.leftIcon {
+    margin-right: 8px;
+    margin-left: 8px;
+}
+  
+.rightIcon {
+    margin-left: auto;
+    margin-right: 8px;
+}
+
+.horizontalLine {
+    border-top: 1px solid black; /* 横線のスタイル */
+    width: 100%; /* 横線がコンテナの幅いっぱいに広がるように追加 */
+}
+
+.size {
+    height: 738px;
+    overflow: scroll;
+}
+
+.heart {
+    color: gray;
+    cursor: pointer;
+}
+
+.red_heart {
+    color: red;
+}
+
+.book {
+    color: gray;
+    cursor: pointer;
+}
+
+.black_book {
+    color: black;
+}

@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import styles from '@/styles/Gpt.module.css'
+import UpLoad from "@/components/gpt/UpLoad.jsx";
+import TextBox from '@/components/gpt/TextBox';
 
 const GptComponent = () => {
   const [message, setMessage] = useState('');
   const [input, setInput] = useState('');
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const fetchMessage = async () => {
     const configuration = {
@@ -30,14 +33,37 @@ const GptComponent = () => {
     fetchMessage();
   }
 
+  const fileInput = React.useRef();
+
+  const handleImageClick = () => {
+    fileInput.current.click();
+  };
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file && file.type.match(/^image\//)) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        setSelectedImage(e.target.result);
+      };
+      reader.readAsDataURL(file);
+    } else {
+      setSelectedImage(null);
+    }
+  };
+
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={input} onChange={e => setInput(e.target.value)} className={styles.hello}/>
-        <button type="submit">Send</button>
-      </form>
-      <p>{message}</p>
-      <img src='gpt/next.svg' />
+      <div className={styles.robot}>
+        <div className={styles.robot_text}>
+        </div>
+        <img src='gpt/robot.svg' className={styles.robot_img}/>
+      </div>
+      <div className={styles.upload}>
+        <UpLoad />
+        <UpLoad />
+      </div>
+      <TextBox />
     </div>
   );
 }
