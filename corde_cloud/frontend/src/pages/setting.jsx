@@ -38,7 +38,7 @@ const Setting = () => {
 
       {/* 自己紹介欄 */}
       <p className={styles.text_comment}>自己紹介</p>
-      <input type="text" className={styles.add_comment} half placeholder="自己紹介" maxlength="5" autocomplete="no"    {           }      ></input>
+      <input type="text" className={styles.add_comment} half placeholder="自己紹介" maxlength="5" autocomplete="no"></input>
 
 
 

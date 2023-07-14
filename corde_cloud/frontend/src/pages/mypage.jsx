@@ -2,6 +2,8 @@ import React, { useState , useEffect} from 'react';
 import styles from '@/styles/Mypage.module.css'
 import MyHeader from "@/components/MyHeader";
 
+import { Link } from 'react-router-dom';
+import setting from './setting.jsx';
 
 
   {/*ユーザー写真*/}
@@ -149,15 +151,28 @@ import MyHeader from "@/components/MyHeader";
       <div className={styles.main2}>
 
         {/* プロフィールを編集 */}
-        <button className={styles.profile_setting_button}>プロフィールを編集</button>
+        <button className={styles.profile_setting_button} href="/">プロフィールを編集</button>
+        
 
 
+    <ul>
+      <li>
+        <Link href="/">Home</Link>
+      </li>
+      <li>
+        <Link href="/about">About Us</Link>
+      </li>
+      <li>
+        <Link href="/blog/hello-world">Blog Post</Link>
+      </li>
+    </ul>
         <div className={styles.box}>
       </div>
 
 
         {/*タグイメージsvc*/}
         <img className={styles.tag_svc} src='profile/tag.svg' />
+
 
 
 
