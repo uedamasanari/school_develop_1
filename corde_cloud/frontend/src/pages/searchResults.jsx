@@ -2,46 +2,59 @@ import React, { useState, useEffect } from 'react'
 import styles from '@/styles/Searchresults.module.css'
 
 export default function Home() {
-
+  const dummyData = [
+    {
+      id:1,
+      imageURL:'searchResults/sample.jpeg'
+    },
+    {
+      id:2,
+      imageURL:'searchResults/sample.jpeg'
+    },
+    {
+      id:3,
+      imageURL:'searchResults/sample.jpeg'
+    },
+    {
+      id:4,
+      imageURL:'searchResults/sample.jpeg'
+    },
+    {
+      id:5,
+      imageURL:'searchResults/sample.jpeg'
+    },
+    {
+      id:6,
+      imageURL:'searchResults/sample.jpeg'
+    },
+    {
+      id:7,
+      imageURL:'searchResults/sample.jpeg'
+    },
+    {
+      id:8,
+      imageURL:'searchResults/sample.jpeg'
+    }
+  ];
 
 
   return (
     <div>
-         <div className="container">
-             <p className={styles.itemimg}>
-               <img src="searchResults/sample.jpeg" width="147" height="155"/>
-               <img src="searchResults/sample.jpeg" width="147" height="155"/>
-             </p>
-         </div>
-
-         <div className="container">
-             <p className={styles.itemimg}>
-               <img src="searchResults/sample.jpeg" width="147" height="155"/>
-               <img src="searchResults/sample.jpeg" width="147" height="155"/>
-             </p>
-         </div>
-
-         <div className="container">
-             <p className={styles.itemimg}>
-               <img src="searchResults/sample.jpeg" width="147" height="155"/>
-               <img src="searchResults/sample.jpeg" width="147" height="155"/>
-             </p>
-         </div>
-
-         <div className="container">
-             <p className={styles.itemimg}>
-               <img src="searchResults/sample.jpeg" width="147" height="155"/>
-               <img src="searchResults/sample.jpeg" width="147" height="155"/>
-             </p>
-         </div>
-        
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' , marginTop: '20px' , flexWrap: 'wrap'}}>
+        {dummyData.map((item,index) => (
+          <React.Fragment key={item.id}>
+          <img
+            src={item.imageURL}
+            alt={`Image ${item.id}`}
+            style={{width:'147px' , height:'155px' , padding:'10px'}}
+          />
+          {(index + 1) % 2 === 0 && <br />} {/* 2つごとに改行 */}
+            </React.Fragment>
+        ))}
+      </div>
+    
 
      </div>
-    // <ul className = "bl_flexContainer">
-    //   <li className = "el_flexItem"></li>
-    //   <li className = "el_flexItem"></li>
-    //   <li className = "el_flexItem"></li>
-    // </ul>
     
   )
 }

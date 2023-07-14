@@ -18,10 +18,8 @@
     color: #8C6A63;
 }
 
-.container{
-    display: flex;
-}
-
 .codeimg{
-    text-align: center;
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
 }

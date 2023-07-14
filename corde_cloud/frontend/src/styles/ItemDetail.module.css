@@ -1,10 +1,24 @@
-.itemimg{
-    display: flex;
-    justify-content: center;
-}
-
 .itemname{
     text-align: center;
     font-size: 24px;
     font-family: "Hiragino Sans";
+}
+
+.detail{
+    font-size: 18px;
+    font-family: "Hiragino Sans";
+}
+
+.box{
+    /* position: relative; */
+    border: 1px solid;
+    border-color: #d9d9d9;
+    width: auto;
+    padding: 10px;
+    background-color: white;
+}
+
+.box p{
+    margin: 0;
+    padding: 0;
 }
