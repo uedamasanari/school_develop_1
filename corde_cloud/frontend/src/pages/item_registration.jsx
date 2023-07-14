@@ -5,22 +5,18 @@ import MyHeader from "@/components/MyHeader";
 
 const Item_registration = () => {
   const [itemName, setItemName] = useState('');
-  const [itemImage, setItemImage] = useState(null);
-  const [selectedTag, setSelectedTag] = useState('');
+  const [selectedFile, setSelectedFile] = useState(null);
   const [itemDescription, setItemDescription] = useState('');
 
   const handleItemNameChange = (event) => {
     setItemName(event.target.value);
   };
 
-  const handleItemImageChange = (event) => {
+  const handleFileChange = (event) => {
     const file = event.target.files[0];
-    setItemImage(URL.createObjectURL(file));
+    setSelectedFile(file);
   };
 
-  const handleTagChange = (event) => {
-    setSelectedTag(event.target.value);
-  };
 
   const handleDescriptionChange = (event) => {
     setItemDescription(event.target.value);
@@ -50,33 +46,28 @@ const Item_registration = () => {
         </div>
 
 
-        <div className={styles.form_group_image}>
-          {/* アイテム画 */}
 
 
-            <input type="file" accept="image/*" onChange={handleItemImageChange} className={styles.image_tab} />
-
-          {itemImage && <img src={itemImage} alt="アイテム画像" className={styles.image_preview} />}
+        <div>
+      <label className={styles.fileLabel}>
+        <input type="file" onChange={handleFileChange} className={styles.fileInput} />
+        画像を選択
+      </label>
+      {selectedFile && (
+        <div className={styles.imageContainer}>
+          <img src={URL.createObjectURL(selectedFile)} alt="選択されたファイル" />
         </div>
+      )}
+    </div>
 
 
-        <div className={styles.form_group_tag}>
-          <label>タグ</label>
-          <select  multiple={true} value={selectedTag} onChange={handleTagChange}>
-            <option value="">タグを選択してください</option>
-            <option value="tag1">タグ1</option>
-            <option value="tag2">タグ2</option>
-            <option value="tag3">タグ3</option>
-          </select>
-        </div>
 
 
-        <button className={styles.add_button}>#追加</button>
 
 
         <div className={styles.form_group}>
           {/* 詳細 */}
-          <input textarea value={itemDescription} onChange={handleDescriptionChange} className={styles.item_info} half placeholder="アイテム詳細"/>
+          <input type="text" value={itemDescription} onChange={handleDescriptionChange} className={styles.item_info} half placeholder="アイテム詳細"/>
         </div>
 
 

@@ -41,6 +41,10 @@ const Setting = () => {
       <input type="text" className={styles.add_comment} half placeholder="自己紹介" maxlength="5" autocomplete="no"></input>
 
 
+
+
+
+
     </div>
 
 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Registration = () => {
   const [name, setName] = useState();
@@ -16,7 +17,7 @@ const Registration = () => {
         password: pass
       })
       .then((response) => {
-        console.log(response);
+        console.log("success");
       })
       .catch((error) => {
         console.log(error);
@@ -47,10 +48,12 @@ const Registration = () => {
         type="password"
         placeholder="パスワード"
         name="password"
-        onChange={(e)=>setPass(e.target.value)}
-        />
-        <button onClick={insertData}>登録</button>
-      </div>
-    );
-  };
-  export default Registration;
+        value={data.password}
+        onChange={handleChange}
+      />
+      <button onClick={insertData}>登録</button>
+    </div>
+  );
+};
+
+export default Registration;
