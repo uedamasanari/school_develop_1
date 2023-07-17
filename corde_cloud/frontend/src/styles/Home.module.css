@@ -1,0 +1,25 @@
+.tytle{
+    text-align: center;
+    font-family: "Hiragino Sans";
+    font-size: 24px;
+}
+
+.closet{
+    text-align: left;
+    font-family: "Hiragino Sans";
+    font-size: 20px;
+    color: #8C6A63;
+}
+
+.sns{
+    text-align: left;
+    font-family: "Hiragino Sans";
+    font-size: 20px;
+    color: #8C6A63;
+}
+
+.codeimg{
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+}
