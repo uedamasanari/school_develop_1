@@ -24,6 +24,17 @@ const Registration = () => {
       });
   };
 
+  const getCloset = () => {
+    axios
+    .get("http://localhost:8000/api/Allcloset.php")
+    .then((response) => {
+      console.log(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  };
+
   return (
     <div>
       <input
@@ -48,10 +59,11 @@ const Registration = () => {
         type="password"
         placeholder="パスワード"
         name="password"
-        value={data.password}
-        onChange={handleChange}
+        value={pass}
+        onChange={(e)=>setPass(e.target.value)}
       />
       <button onClick={insertData}>登録</button>
+      <button onClick={getCloset}>クローゼット取得</button>
     </div>
   );
 };
