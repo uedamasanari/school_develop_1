@@ -47,7 +47,6 @@ const Item_registration = () => {
 
 
 
-
         <div>
       <label className={styles.fileLabel}>
         <input type="file" onChange={handleFileChange} className={styles.fileInput} />
