@@ -17,6 +17,7 @@
     margin: 0 auto; /* 中央に配置 */
     max-width: 100%; /* 親要素に対して最大幅100% */
     height: auto; /* アスペクト比を維持したまま、高さを自動調整 */
+    cursor: pointer;
   }
   
   .text {

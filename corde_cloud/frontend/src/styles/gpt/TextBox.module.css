@@ -8,11 +8,22 @@
 .text_box{
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 80%;
     height:200px;
     background-color: white;
     border: 5px solid #8C6A63;
     border-radius: 30px;
+}
+.textarea{
+    padding:20px;
+    width:88%;
+    height:78%;
+    border:none;
+    border-radius: 20px;
+}
+.textarea:focus {
+    outline: none;
 }
 .button_area{
     display: flex;
