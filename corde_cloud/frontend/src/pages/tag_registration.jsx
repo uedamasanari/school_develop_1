@@ -36,7 +36,7 @@ const Tag_registration = () => {
 
 <MyHeader title={"タグ登録"} />
 
-      <button className={styles.button} onClick={openModal}>ボタン</button>
+    <button className={styles.button} onClick={openModal}>ボタン</button>
 
       {isModalOpen && (
         <div className={styles.modalBackdrop}>
