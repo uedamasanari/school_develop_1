@@ -6,9 +6,9 @@ const Registration = () => {
   }, []);
   const user_id = localStorage.getItem("user_item");
   const [path, setpath] = useState();
-  const [item_name,setName] = userState();
+  const [item_name,setName] = useState();
   const [loginStatus, setLoginStatus] = useState();
-  const [detail,setDetail] = userState();
+  const [detail,setDetail] = useState();
   const Login =() =>{
     console.log(item_name,detail,user_id)
     axios
