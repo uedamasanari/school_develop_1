@@ -11,7 +11,17 @@ import setting from './setting.jsx';
 
     const [expanded, setExpanded] = useState(false);
 
-  
+
+    const settingClick = () => {
+      location.href = "/setting";
+    };
+
+    const tag_registrationClick = () => {
+      location.href = "/tag_registration";
+    };
+
+
+
     const handleToggleExpand = () => {
       setExpanded(!expanded);
 
@@ -84,7 +94,9 @@ import setting from './setting.jsx';
 
       <div className={styles.header}>
 
-      <img className={styles.setting_svc} src='profile/Setting.svg'/>
+      <div onClick={settingClick}>
+        <img className={styles.setting_svc} src='profile/Setting.svg'/>
+      </div>
 
       </div>
 
@@ -151,21 +163,12 @@ import setting from './setting.jsx';
       <div className={styles.main2}>
 
         {/* プロフィールを編集 */}
-        <button className={styles.profile_setting_button} href="/">プロフィールを編集</button>
+        <button onClick={settingClick}
+          className={styles.profile_setting_button}>プロフィールを編集
+        </button>
         
 
 
-    <ul>
-      <li>
-        <Link href="/">Home</Link>
-      </li>
-      <li>
-        <Link href="/about">About Us</Link>
-      </li>
-      <li>
-        <Link href="/blog/hello-world">Blog Post</Link>
-      </li>
-    </ul>
         <div className={styles.box}>
       </div>
 
@@ -180,11 +183,9 @@ import setting from './setting.jsx';
 
 
       {/*タグイメージsvc*/}
-
+<div onClick={tag_registrationClick}>
       <img className={styles.add_svc} src='profile/add.svg' />
-
-
-
+</div>
 
 
 
