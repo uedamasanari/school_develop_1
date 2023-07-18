@@ -5,7 +5,7 @@ const Registration = () => {
   const [password, setPass] = useState();
   const [loginStatus, setLoginStatus] = useState();
   useEffect(() => {
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    const isLoggedIn = window.localStorage.getItem("isLoggedIn");
     if (isLoggedIn) {
       setLoginStatus("ログイン済みです");
     }

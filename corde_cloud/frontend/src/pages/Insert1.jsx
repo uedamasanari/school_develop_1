@@ -26,7 +26,9 @@ const Registration = () => {
 
   const getCloset = () => {
     axios
-    .get("http://localhost:8000/api/Allcloset.php")
+    .post("http://localhost:8000/api/Allcloset.php",{
+      user_id:1,
+    })
     .then((response) => {
       console.log(response.data);
     })
