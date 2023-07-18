@@ -20,7 +20,9 @@
 }
 
 .img {
-    width: 100%; /* 画像の幅を親要素に合わせる */
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 90%; /* 画像の幅を親要素に合わせる */
     height: auto; /* アスペクト比を維持したまま、高さを自動調整する */
 }
 
