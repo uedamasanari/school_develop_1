@@ -4,18 +4,20 @@ header("Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 require_once 'DBManager.php';
 
-function getCloset() {
+function getCloset($user_id) {
     $dbManager = new DBManager();
     $pdo = $dbManager->GetDB(); // データベース接続を取得
     if ($pdo) {
         try {
-            $sql = "SELECT * FROM closet";
+            $sql = "SELECT * FROM item WHERE user_id = :user_id";
             $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':user_id', $user_id);
             $stmt->execute();
-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            $closet = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $response = [
                 'status' => 'success',
-                'message' => 'Login successful.'
+                'message' => 'Closet retrieval successful.',
+                'data' => $closet
             ];
         } catch (PDOException $e) {
             // データベースエラーの場合の処理
@@ -36,6 +38,10 @@ function getCloset() {
     header('Content-Type: application/json');
     echo json_encode($response);
 }
-
-getCloset($email, $password);
+$inputJSON = file_get_contents('php://input');
+$input = json_decode($inputJSON, true);
+$user_id = $input['user_id'];
+// $user_id = 1;//仮置き1
+getCloset($user_id);
 ?>
+
