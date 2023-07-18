@@ -3,10 +3,10 @@ import styles from '@/styles/Footer.module.css';
 
 const MyFooter = () => {
   const homeClick = () => {
-    location.href = "/bookmark";
+    location.href = "/home";
   };
   const closetClick = () => {
-    location.href = "/bookmark";
+    location.href = "/search";
   };
   const itemClick = () => {
     location.href = "/item_registration";
