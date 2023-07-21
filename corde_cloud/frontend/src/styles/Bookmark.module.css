@@ -51,8 +51,9 @@
 }
 
 .size {
+    overflow-x: hidden;
     height: 738px;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .heart {

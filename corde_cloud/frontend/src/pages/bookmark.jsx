@@ -20,17 +20,7 @@ const Bookmark = () =>  {
     setIsBooks(!books);
     setBooks(books ? books - 1 : books + 1);
   };
-  const handleGetLikesCount = (tweetId) => {
-  axios.get(`/code_cloud/backend/api/getTweetLikesCount.php?tweet_id=${tweetId}`)
-    .then(response => {
-      const likeCount = response.data.like_count;
-      // 取得したいいね数を利用する処理をここに書く
-    })
-    .catch(error => {
-      // エラーハンドリング
-      console.error(error);
-    });
-  };
+  
 
   return (
     
