@@ -1,84 +1,111 @@
-import React, { useState } from 'react';
-import styles from '@/styles/Item_registration.module.css'
+import React, { useState } from "react";
+import axios from "axios";
+import styles from "@/styles/Item_registration.module.css";
 import MyHeader from "@/components/MyHeader";
 
+async function uploadImage(file, item_name, detail) {
+  const formData = new FormData();
+  formData.append("image", file);
+
+  try {
+    const response = await axios.post(
+      "http://localhost:8000/api/insertImage.php",
+      formData
+    );
+    console.log(response);
+
+    const imagePath = response.data.imagePath;
+    console.log(imagePath);
+    const itemData = {
+      item_name: item_name,
+      detail: detail,
+      user_id: 1,
+      imagePath: imagePath,
+    };
+
+    const response2 = await axios.post(
+      "http://localhost:8000/api/insertCloset.php",
+      itemData,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    console.log(response2);
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 const Item_registration = () => {
-  const [itemName, setItemName] = useState('');
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [itemDescription, setItemDescription] = useState('');
+  const [file, setFile] = useState(null);
+  const [item_name, setItemName] = useState("");
+  const [detail, setDetail] = useState("");
+  const [preview, setPreview] = useState(null);
 
-  const handleItemNameChange = (event) => {
-    setItemName(event.target.value);
+  const handleChange = (event) => {
+    setFile(event.target.files[0]);
+    setPreview(URL.createObjectURL(event.target.files[0]));
   };
 
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    setSelectedFile(file);
-  };
-
-
-  const handleDescriptionChange = (event) => {
-    setItemDescription(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // 送信処理を行う関数を実装する
-
-    // フォームの値を初期化する
-    setItemName('');
-    setItemImage(null);
-    setSelectedTag('');
-    setItemDescription('');
+    try {
+      if (file) {
+        await uploadImage(file, item_name, detail);
+      } else {
+        alert("Please select a file to upload");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
-
     <div className={styles.container}>
-            <MyHeader title={"プロフィール"} />
+      <MyHeader title={"プロフィール"} />
+      <div className={styles.form_group_name}>
+        <input
+          type="text"
+          placeholder="アイテム名"
+          name="item_name"
+          className={styles.form_name}
+          onChange={(e) => setItemName(e.target.value)}
+        />
+      </div>
+      <div className={styles.form_group}>
+        <input
+          type="text"
+          placeholder="詳細"
+          name="detail"
+          className={styles.item_info}
+          onChange={(e) => setDetail(e.target.value)}
+        />
+      </div>
       <form onSubmit={handleSubmit}>
-
-        
         <div className={styles.form_group_name}>
-          {/* アイテム名 */}
-          <input type="text" value={itemName} onChange={handleItemNameChange} className={styles.form_name} half placeholder="アイテム名"/>
+          <input
+            type="file"
+            name="image"
+            accept="image/*"
+            required
+            onChange={handleChange}
+          />
         </div>
-
-
-
-        <div>
-      <label className={styles.fileLabel}>
-        <input type="file" onChange={handleFileChange} className={styles.fileInput} />
-        画像を選択
-      </label>
-      {selectedFile && (
-        <div className={styles.imageContainer}>
-          <img src={URL.createObjectURL(selectedFile)} alt="選択されたファイル" />
-        </div>
-      )}
-    </div>
-
-
-
-
-
-
-        <div className={styles.form_group}>
-          {/* 詳細 */}
-          <input type="text" value={itemDescription} onChange={handleDescriptionChange} className={styles.item_info} half placeholder="アイテム詳細"/>
-        </div>
-
-
+        {preview && <img className={styles.image_preview} src={preview} alt="Image preview" />}
         <div className={styles.button_group}>
-          <button type="submit" className={`${styles.button} ${styles.center_button}`}>登録</button>
+          <button
+            type="submit"
+            className={`${styles.button} ${styles.center_button}`}
+          >
+            登録
+          </button>
         </div>
-
-
       </form>
     </div>
   );
 };
-
 
 export default Item_registration;
