@@ -10,12 +10,18 @@ const Registration = () => {
   const insertData = () => {
     console.log(name,pass,comment,mail)
     axios
-    .post("http://localhost:8000/api/Insert.php", {
+    .post("https://localhost:8000/api/Insert.php", {
         user_name: name,
         comment: comment,
         mail_address: mail,
         password: pass
-      })
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          },
+        }
+      )
       .then((response) => {
         console.log("success");
       })
