@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import styles from "@/styles/Item_registration.module.css";
 import MyHeader from "@/components/MyHeader";
+import swal from "sweetalert";
 
 async function uploadImage(file, item_name, detail) {
   const formData = new FormData();
@@ -34,6 +35,7 @@ async function uploadImage(file, item_name, detail) {
     );
 
     console.log(response2);
+    swal("登録完了", "アイテムを登録しました", "success");
   } catch (error) {
     console.log(error);
   }

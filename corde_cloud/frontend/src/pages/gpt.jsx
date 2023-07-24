@@ -22,7 +22,7 @@ const GptComponent = () => {
       messages: [
         {
           role: "system",
-          content: "You are always angry but you always respond.",
+          content: "明るい人で、50文字以内に必ず収まる文章を返信",
         },
         { role: "user", content: text },
       ],

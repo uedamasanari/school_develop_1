@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styles from '@/styles/Search.module.css'
-
+import MyHeader from '@/components/MyHeader'
 
   const MyComponent = () => {
 
@@ -16,6 +16,7 @@ import styles from '@/styles/Search.module.css'
 
   return (
         <div className="container">
+          <MyHeader title={"クローゼット"} />
             {/* <p className={styles.tagSearch}>タグ検索
             <a className={styles.plusbutton} onClick={linkClick}>+</a>
             </p>

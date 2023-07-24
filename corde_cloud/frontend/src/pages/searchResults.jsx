@@ -1,57 +1,36 @@
 import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 import styles from '@/styles/Searchresults.module.css'
+import MyHeader from '@/components/MyHeader'
 
 export default function Home() {
+  const [closet, setCloset] = useState([])
+
+  useEffect(() => {
+    axios
+    .post("http://localhost:8000/api/Allcloset.php",{user_id:1})
+    .then((response) => {
+      setCloset(response.data.data);
+      console.log(response.data.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  }, [])
 
   const handleClick = () => {
     window.location.href = '/itemdetail';
   }
 
-  const dummyData = [
-    {
-      id:1,
-      imageURL:'searchResults/sample.jpeg'
-    },
-    {
-      id:2,
-      imageURL:'searchResults/sample.jpeg'
-    },
-    {
-      id:3,
-      imageURL:'searchResults/sample.jpeg'
-    },
-    {
-      id:4,
-      imageURL:'searchResults/sample.jpeg'
-    },
-    {
-      id:5,
-      imageURL:'searchResults/sample.jpeg'
-    },
-    {
-      id:6,
-      imageURL:'searchResults/sample.jpeg'
-    },
-    {
-      id:7,
-      imageURL:'searchResults/sample.jpeg'
-    },
-    {
-      id:8,
-      imageURL:'searchResults/sample.jpeg'
-    }
-
-  ];
-
-
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' , marginTop: '20px' , flexWrap: 'wrap'}}>
-        {dummyData.map((item,index) => (
-          <React.Fragment key={item.id}>
+      <MyHeader title={"クローゼット"} />
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' , marginTop: '20px' , flexWrap: 'wrap',overflow:'scroll',height:'750px'}}>
+        {closet.map((item,index) => (
+          <React.Fragment key={item.item_id}>
           <img
-            src={item.imageURL}
-            alt={`Image ${item.id}`}
+            src={item.picture_path}
+            alt={`Image ${item.item_id}`}
             onClick={handleClick}
             style={{width:'147px' , height:'155px' , padding:'10px'}}
           />

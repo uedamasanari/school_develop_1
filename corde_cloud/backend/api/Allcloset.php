@@ -14,6 +14,14 @@ function getCloset($user_id) {
             $stmt->bindParam(':user_id', $user_id);
             $stmt->execute();
             $closet = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            // Modify each item's picture_path to absolute URL.
+            $serverName = $_SERVER['SERVER_NAME'];
+            foreach ($closet as &$item) {
+                $publicPath = str_replace('../', '', $item['picture_path']);
+                $item['picture_path'] = "http://localhost:8000/$publicPath";
+            }
+
             $response = [
                 'status' => 'success',
                 'message' => 'Closet retrieval successful.',
@@ -38,6 +46,7 @@ function getCloset($user_id) {
     header('Content-Type: application/json');
     echo json_encode($response);
 }
+
 $inputJSON = file_get_contents('php://input');
 $input = json_decode($inputJSON, true);
 $user_id = $input['user_id'];
