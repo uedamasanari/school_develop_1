@@ -3,12 +3,18 @@ import styles from '@/styles/Setting.module.css'
 import MyHeader from "@/components/MyHeader";
 
 const Setting = () => {
+  const handleUpdate = () => {
+    // Perform the update logic here
+    // This function will be called when the "Update" button is clicked
+    console.log('Update clicked');
+  };
+  
   return (
 
 
     <div className={styles.main}>
 
-      <MyHeader title={"プロフィール画面"} />
+      <MyHeader title={"プロフィール編集画面"} />
 
       <div className={styles.image_container}>
 
@@ -41,7 +47,7 @@ const Setting = () => {
       <input type="text" className={styles.add_comment} half placeholder="自己紹介" maxlength="5" autocomplete="no"></input>
 
 
-
+      <button className={styles.update_button} onClick={handleUpdate}>更新</button>
 
 
 
