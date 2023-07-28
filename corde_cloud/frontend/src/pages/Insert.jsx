@@ -40,7 +40,7 @@ const [password, setPassword] = useState('');
   const handleSignUp = () => {
     // ログイン機能移動処理をここに実装する
     console.log('ログインがクリックされました');
-    window.location.href = '/login';
+    window.location.href = '/index';
   };
 
   return (
