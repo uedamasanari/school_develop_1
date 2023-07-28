@@ -30,7 +30,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
 }
 .button{
     width:20%;
@@ -39,4 +38,5 @@
     border-radius: 30px;
     color:white;
     border:none;
+    cursor: pointer;
 }
