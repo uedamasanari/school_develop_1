@@ -13,7 +13,7 @@ export default function Home() {
     const localStorageItemId = localStorage.getItem('item_id'); // LocalStorageからitem_idを取得します
 
     axios
-    .post("http://kyuuri.daa.jp/Web/corde_cloud/Allcloset.php",{user_id:localStorage.getItem('user_id')})
+    .post("https://kyuuri.daa.jp/Web/corde_cloud/Allcloset.php",{user_id:localStorage.getItem('user_id')})
     .then((response) => {
       // レスポンスの中でLocalStorageのitem_idと一致するものを見つけます
       const matchedItem = response.data.data.find(item => item.item_id.toString() === localStorageItemId);

@@ -7,7 +7,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-    .post("http://kyuuri.daa.jp/Web/corde_cloud/Allcloset.php",{user_id:localStorage.getItem('user_id')})
+    .post("https://kyuuri.daa.jp/Web/corde_cloud/Allcloset.php",{user_id:localStorage.getItem('user_id')})
     .then((response) => {
       // closetの要素数を12までに制限
       setCloset(response.data.data.slice(0, 12));

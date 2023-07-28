@@ -8,7 +8,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .post("http://kyuuri.daa.jp/Web/corde_cloud/Allcloset.php", {
+      .post("https://kyuuri.daa.jp/Web/corde_cloud/Allcloset.php", {
         user_id: localStorage.getItem("user_id"),
       })
       .then((response) => {
