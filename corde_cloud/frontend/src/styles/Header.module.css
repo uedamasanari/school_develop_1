@@ -1,17 +1,21 @@
-.header{
-    width:100%;
-    height:70px;
-    background-color: #8C6A63;
+.header {
+  width: 100%;
+  height: 70px;
+  background-color: #8c6a63;
 }
-.returnArea{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    height:100%;
-    margin:auto;
-    color:white;
+.returnArea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  color: white;
 }
 .returnArea > div:nth-child(2) {
-    transform: translateX(-50%);
-  }
+  transform: translateX(-50%);
+}
+
+.returnButton {
+  cursor: pointer;
+}

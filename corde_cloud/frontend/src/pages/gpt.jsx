@@ -5,7 +5,7 @@ import UpLoad from "@/components/gpt/UpLoad.jsx";
 import TextBox from "@/components/gpt/TextBox";
 
 const GptComponent = () => {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState("僕に聞きたいことを入力してね！※画像アップロード機能は未実装です");
   const [input, setInput] = useState("");
   const [selectedImage, setSelectedImage] = useState(null);
   const [text, setText] = useState("");
@@ -22,7 +22,7 @@ const GptComponent = () => {
       messages: [
         {
           role: "system",
-          content: "You are always angry but you always respond.",
+          content: "明るい人で、50文字以内に必ず収まる文章を返信",
         },
         { role: "user", content: text },
       ],

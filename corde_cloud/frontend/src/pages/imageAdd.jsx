@@ -7,7 +7,7 @@ async function uploadImage(file, item_name, detail) {
 
   try {
     const response = await axios.post(
-      "http://localhost:8000/api/insertImage.php",
+      "http://kyuuri.daa.jp/Web/corde_cloud/insertImage.php",
       formData
     );
     console.log(response);
@@ -22,7 +22,7 @@ async function uploadImage(file, item_name, detail) {
     };
 
     const response2 = await axios.post(
-      "http://localhost:8000/api/insertCloset.php",
+      "http://kyuuri.daa.jp/Web/corde_cloud/insertCloset.php",
       itemData,
       {
         headers: {
