@@ -43,6 +43,7 @@ const [password, setPassword] = useState('');
   const handleSignUp = () => {
     // 新規登録処理をここに実装する
     console.log('新規登録がクリックされました');
+    window.location.href = '/insert';
   };
 
   return (
