@@ -5,7 +5,7 @@ import UpLoad from "@/components/gpt/UpLoad.jsx";
 import TextBox from "@/components/gpt/TextBox";
 
 const GptComponent = () => {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState("僕に聞きたいことを入力してね！※画像アップロード機能は未実装です");
   const [input, setInput] = useState("");
   const [selectedImage, setSelectedImage] = useState(null);
   const [text, setText] = useState("");

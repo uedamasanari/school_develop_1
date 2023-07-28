@@ -10,18 +10,26 @@ export default function Home() {
   const [picture_path, setPicturePath] = useState("")
 
   useEffect(() => {
+    const localStorageItemId = localStorage.getItem('item_id'); // LocalStorageからitem_idを取得します
+
     axios
-    .post("http://localhost:8000/api/Allcloset.php",{user_id:1})
+    .post("http://kyuuri.daa.jp/Web/corde_cloud/Allcloset.php",{user_id:localStorage.getItem('user_id')})
     .then((response) => {
-      setItemId(response.data.data[0].item_id);
-      setItemName(response.data.data[0].item_name);
-      setDetail(response.data.data[0].detail);
-      setPicturePath(response.data.data[0].picture_path);
+      // レスポンスの中でLocalStorageのitem_idと一致するものを見つけます
+      const matchedItem = response.data.data.find(item => item.item_id.toString() === localStorageItemId);
+
+      // 一致するものがあった場合には、そのアイテムの詳細をセットします
+      if (matchedItem) {
+        setItemId(matchedItem.item_id);
+        setItemName(matchedItem.item_name);
+        setDetail(matchedItem.detail);
+        setPicturePath(matchedItem.picture_path);
+      }
     })
     .catch((error) => {
       console.log(error);
     });
-  }, [])
+  }, []);
 
   return (
     <div>

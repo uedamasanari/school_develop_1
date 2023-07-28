@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 import styles from '@/styles/Login.module.css'
 import MyHeader from "@/components/MyHeader";
 
 function Login() {
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
-
-useEffect(() => {
-  console.log('Email:', email);
-  console.log('Password:', password);
-}, [email, password]);
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -21,9 +17,27 @@ useEffect(() => {
 
   const handleLogin = () => {
     // ログイン処理をここに実装する
-    console.log('ログインがクリックされました');
-    console.log('Email:', email);
-    console.log('Password:', password);
+    axios
+    .post("http://kyuuri.daa.jp/Web/corde_cloud/login.php", {
+        email: email,
+        password: password,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((response) => {
+        console.log(response.data);
+        if(response.data.status){
+          localStorage.setItem('user_id', response.data.user_id);
+          window.location.href = '/home';
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   const handleSignUp = () => {

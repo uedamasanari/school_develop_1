@@ -33,10 +33,7 @@ $user_name = $input['user_name'];
 $user_coment = $input['user_coment'];
 $mail_address = $input['mail_address'];
 $password = $input['password'];
-//InsertCloseの引数
-$picture_path = $input['picture_path'];
-$item_name = $input['item_name'];
-$detail = $input['detail'];
-$user_id = $input['user_id'];
+$Insert = new Insert();
+$Insert->Insertuser_info($user_name, $user_coment, $mail_address, $password);
 
 ?>
